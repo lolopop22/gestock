@@ -1,0 +1,33 @@
+<RCC>
+  <qresource>
+    <file>images/client_original.png</file>
+    <file>images/entrepot1.png</file>
+    <file>images/dashboard4.png</file>
+    <file>images/Entrepot_original.png</file>
+    <file>images/customersmall1.png</file>
+    <file>images/logo2.png</file>
+    <file>images/add student.png</file>
+    <file>images/customer_256px.png</file>
+    <file>images/dashboard2.png</file>
+    <file>images/dashboard5.png</file>
+    <file>images/dashboardsmall1.png</file>
+    <file>images/dashboardsmall2.png</file>
+    <file>images/delete.png</file>
+    <file>images/edit.png</file>
+    <file>images/excel.png</file>
+    <file>images/finances1.png</file>
+    <file>images/financessmall1.png</file>
+    <file>images/financessmall2.png</file>
+    <file>images/institutionsmall1.png</file>
+    <file>images/institutionsmall2.png</file>
+    <file>images/menu.png</file>
+    <file>images/pdf.png</file>
+    <file>images/profile.png</file>
+    <file>images/search.png</file>
+    <file>images/settingssmall1.png</file>
+    <file>images/settingssmall2.png</file>
+    <file>images/signoutsmall1.png</file>
+    <file>images/signoutsmall2.png</file>
+    <file>images/customer_256px.png</file>
+  </qresource>
+</RCC>
