@@ -1,5 +1,6 @@
 
 from mysql import connector
+# from back_logicel_gestion_stock import 
 
 from PySide6.QtWidgets import QMainWindow, QMenu
 from PySide6.QtGui import QAction
@@ -16,101 +17,124 @@ class FrontPage(QMainWindow, Ui_MainWindow):
         self.icon_only_widget.setHidden(True)
 
         # Hide Dropdowns
-        self.clients_dropdown.setHidden(True)
-        self.entrepots_dropdown.setHidden(True)
-        self.fournisseurs_dropdown.setHidden(True)
-        self.comptabilite_dropdown.setHidden(True)
+        self.dropdown_gestion_referentiels.setHidden(True)
+        self.dropdown_gestion_produits.setHidden(True)
+        self.dropdown_gestion_operations.setHidden(True)
+        self.dropdown_gestion_compta.setHidden(True)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(0)
 
         # Connect Buttons to switch to different pages
-        self.dashboard_1.clicked.connect(self.switch_to_dashboard_page)
-        self.dashboard_2.clicked.connect(self.switch_to_dashboard_page)
-        
-        self.parametre_1.clicked.connect(self.switch_to_parametres_page)
-        self.parametre_2.clicked.connect(self.switch_to_parametres_page)
+        self.btn_dashboard_1.clicked.connect(self.switch_to_dashboard_tab)
+        self.btn_dashboard_2.clicked.connect(self.switch_to_dashboard_tab)
 
-        self.entrepots_2.clicked.connect(self.switch_to_entrepots_marchandise_page)
-        self.clients_2.clicked.connect(self.switch_to_clients_info_page)
-        self.fournisseurs_2.clicked.connect(self.switch_to_fournisseurs_info_page)
-        self.comptabilite_2.clicked.connect(self.switch_to_comptabilite_budget_page)
+        self.btn_ref_produits.clicked.connect(self.switch_to_referentiel_produits_tab)
+        self.btn_ref_fournisseurs.clicked.connect(self.switch_to_referentiel_fournisseurs_tab)
+        self.btn_ref_entrepots.clicked.connect(self.switch_to_referentiel_entrepots_tab)
+        self.btn_ref_clients.clicked.connect(self.switch_to_referentiel_clients_tab)
         
-        self.entrepots_marchandise.clicked.connect(self.switch_to_entrepots_marchandise_page)
-        self.entrepots_commande.clicked.connect(self.switch_to_entrepots_commande_page)
+        self.btn_inventaire.clicked.connect(self.switch_to_inventaire_tab)
+        self.btn_mvts_des_stocks.clicked.connect(self.switch_to_mvt_des_stocks_tab)
         
-        self.client_info.clicked.connect(self.switch_to_clients_info_page)
-        self.client_transaction.clicked.connect(self.switch_to_clients_transaction_page)
+        self.btn_inventaire.clicked.connect(self.switch_to_inventaire_tab)
+        self.btn_mvts_des_stocks.clicked.connect(self.switch_to_mvt_des_stocks_tab)
         
-        self.fournisseurs_info.clicked.connect(self.switch_to_fournisseurs_info_page)
-        self.fournisseurs_transaction.clicked.connect(self.switch_to_fournisseurs_transaction_page)
+        self.btn_ventes_retours.clicked.connect(self.switch_to_ventes_et_retours_tab)
+        self.btn_paiements_factures.clicked.connect(self.switch_to_paiements_et_factures_tab)
+        self.btn_livraisons.clicked.connect(self.switch_to_livraisons_tab)
+
+        self.btn_depenses.clicked.connect(self.switch_to_depenses_tab)
+        self.btn_flux_monetaires.clicked.connect(self.switch_to_flux_monetaires_tab)
+        self.btn_rapports_financiers.clicked.connect(self.switch_to_rapports_financiers_tab)
         
-        self.comptabilite_budget.clicked.connect(self.switch_to_comptabilite_budget_page)
-        self.comptabilite_depense.clicked.connect(self.switch_to_comptabilite_depense_page)
+#         self.parametre_1.clicked.connect(self.switch_to_parametres_page)
+#         self.parametre_2.clicked.connect(self.switch_to_parametres_page)
 
         # Connect Buttons to respective context menus
-        self.entrepots_1.clicked.connect(self.entrepots_context_menu)
-        self.clients_1.clicked.connect(self.clients_context_menu)
-        self.fournisseurs_1.clicked.connect(self.fournisseurs_context_menu)
-        self.comptabilite_1.clicked.connect(self.comptabilite_context_menu)
+        self.btn_gestion_referentiels_1.clicked.connect(self.gestion_referentiels_context_menu)
+        self.btn_gestion_produits_1.clicked.connect(self.gestion_produit_context_menu)
+        self.btn_gestion_operations_1.clicked.connect(self.gestion_operations_context_menu)
+        self.btn_gestion_compta_1.clicked.connect(self.gestion_comptabilite_context_menu)
 
-        # Connect to mysql server and create database if it doesn't exist
-        # self.create_connection()
+#         # Connect to mysql server and create database if it doesn't exist
+#         # self.create_connection()
 
-        # Create clients table
-        # self.create_clients_table()
+#         # Create clients table
+#         # self.create_clients_table()
 
-        # Open add client dialog
-        self.ajout_client_btn.clicked.connect(self.open_add_client_student_dialog)
+#         # Open add client dialog
+#         self.ajout_client_btn.clicked.connect(self.open_add_client_student_dialog)
 
-    # Methods to switch to different pages
-    def switch_to_dashboard_page(self):
-        self.stackedWidget.setCurrentIndex(0)
+    # Methods to switch to different tabs
+    def switch_to_dashboard_tab(self):
+        self.tabWidget.setCurrentIndex(0)
     
-    def switch_to_parametres_page(self):
-        self.stackedWidget.setCurrentIndex(9)
+#     def switch_to_parametres_page(self):
+#         self.stackedWidget.setCurrentIndex(9)
 
-        # Entrepôts
-    def switch_to_entrepots_marchandise_page(self):
-        self.stackedWidget.setCurrentIndex(1)
+        # Référentiel Produits
+    def switch_to_referentiel_produits_tab(self):
+        self.tabWidget.setCurrentIndex(1)
 
-    def switch_to_entrepots_commande_page(self):
-        self.stackedWidget.setCurrentIndex(2)
+        # Référentiel Fournisseurs
+    def switch_to_referentiel_fournisseurs_tab(self):
+        self.tabWidget.setCurrentIndex(2)
 
-        # Clients
-    def switch_to_clients_info_page(self):
-        self.stackedWidget.setCurrentIndex(3)
+        # Référentiel Entrepôts
+    def switch_to_referentiel_entrepots_tab(self):
+        self.tabWidget.setCurrentIndex(3)
 
-    def switch_to_clients_transaction_page(self):
-        self.stackedWidget.setCurrentIndex(4)
+        # Référentiel Clients
+    def switch_to_referentiel_clients_tab(self):
+        self.tabWidget.setCurrentIndex(4)
 
-    def switch_to_fournisseurs_info_page(self):
-        self.stackedWidget.setCurrentIndex(5)
+        # Gestion Produits - Inventaire
+    def switch_to_inventaire_tab(self):
+        self.tabWidget.setCurrentIndex(5)
 
-    def switch_to_fournisseurs_transaction_page(self):
-        self.stackedWidget.setCurrentIndex(6)
+        # Gestion Produits - Mvt des stocks
+    def switch_to_mvt_des_stocks_tab(self):
+        self.tabWidget.setCurrentIndex(6)
 
-        # Comptabilité
-    def switch_to_comptabilite_budget_page(self):
-        self.stackedWidget.setCurrentIndex(7)
+        # Gestion Opérations - Ventes et Retours
+    def switch_to_ventes_et_retours_tab(self):
+        self.tabWidget.setCurrentIndex(7)
 
-    def switch_to_comptabilite_depense_page(self):
-        self.stackedWidget.setCurrentIndex(8)
+        # Gestion Opérations - Paiements et Factures
+    def switch_to_paiements_et_factures_tab(self):
+        self.tabWidget.setCurrentIndex(8)
 
-    # Methods to show context menus
-    def entrepots_context_menu(self):
-        self.show_custom_context_menu(self.entrepots_1, ["Marchandises", "Commandes"])
+        # Gestion Opérations - Livraisons
+    def switch_to_livraisons_tab(self):
+        self.tabWidget.setCurrentIndex(9)
+
+        # Gestion Comptabilité - Dépenses
+    def switch_to_depenses_tab(self):
+        self.tabWidget.setCurrentIndex(10)
+
+        # Gestion Comptabilité - Flux monétaires
+    def switch_to_flux_monetaires_tab(self):
+        self.tabWidget.setCurrentIndex(11)
+
+        # Gestion Comptabiltié - Rapports financiers
+    def switch_to_rapports_financiers_tab(self):
+        self.tabWidget.setCurrentIndex(12)
+
+#     # Methods to show context menus
+    def gestion_referentiels_context_menu(self):
+        self.show_custom_context_menu(self.btn_gestion_referentiels_1, ["Produits", "Fournisseurs", "Entrepôts", "Clients"])
     
     # Methods to show context menus
-    def clients_context_menu(self):
-        self.show_custom_context_menu(self.clients_1, ["Informations clients", "Transactions clients"])
+    def gestion_produit_context_menu(self):
+        self.show_custom_context_menu(self.btn_gestion_produits_1, ["Inventaire", "Mouvements des stocks"])
 
     # Methods to show context menus
-    def fournisseurs_context_menu(self):
-        self.show_custom_context_menu(self.fournisseurs_1, ["Informations fournisseurs", "Transactions fournisseurs"])
+    def gestion_operations_context_menu(self):
+        self.show_custom_context_menu(self.btn_gestion_operations_1, ["Ventes et Retours", "Paiements et Factures", "Livraisons"])
     
-    # Methods to show context menus
-    def comptabilite_context_menu(self):
-        self.show_custom_context_menu(self.comptabilite_1, ["Budget", "Dépenses"])
+#     # Methods to show context menus
+    def gestion_comptabilite_context_menu(self):
+        self.show_custom_context_menu(self.btn_gestion_compta_1, ["Dépenses", "Flux monétaires", "Rapports financiers"])
 
 
 
@@ -140,87 +164,95 @@ QMenu:selected{
 
     def handle_menu_item_click(self):
         text = self.sender().text()
-        if text == "Marchandises":
-            self.switch_to_entrepots_marchandise_page()
-        elif text == "Commandes":
-            self.switch_to_entrepots_commande_page()
-        elif text == "Informations clients":
-            self.switch_to_clients_info_page()
-        elif text == "Transactions clients":
-            self.switch_to_clients_transaction_page()
-        elif text == "Informations fournisseurs":
-            self.switch_to_fournisseurs_transaction_page()
-        elif text == "Transactions fournisseurs":
-            self.switch_to_entrepots_commande_page()
-        elif text == "switch_to_comptabilite_page":
-            self.switch_to_entrepots_commande_page()
+        if text == "Produits":
+            self.switch_to_referentiel_produits_tab()
+        elif text == "Fournisseurs":
+            self.switch_to_referentiel_fournisseurs_tab()
+        elif text == "Entrepôts":
+            self.switch_to_referentiel_entrepots_tab()
+        elif text == "Clients":
+            self.switch_to_referentiel_clients_tab()
+        elif text == "Inventaire":
+            self.switch_to_inventaire_tab()
+        elif text == "Mouvements des stocks":
+            self.switch_to_mvt_des_stocks_tab()
+        elif text == "Ventes et Retours":
+            self.switch_to_ventes_et_retours_tab()
+        elif text == "Paiements et Factures":
+            self.switch_to_paiements_et_factures_tab()
+        elif text == "Livraisons":
+            self.switch_to_livraisons_tab()
         elif text == "Dépenses":
-            self.switch_to_comptabilite_depense_page()
+            self.switch_to_depenses_tab()
+        elif text == "Flux monétaires":
+            self.switch_to_flux_monetaires_tab()
+        elif text == "Rapports financiers":
+            self.switch_to_rapports_financiers_tab()
 
-    # CREATE DATABASE CONNECTION
-    def create_connection(self):
+#     # CREATE DATABASE CONNECTION
+#     def create_connection(self):
 
-        host_name = "localhost"
-        user_name = "root"
-        pass_word = "root"
-        database_name = "gestock_db"
+#         host_name = "localhost"
+#         user_name = "root"
+#         pass_word = "root"
+#         database_name = "gestock_db"
 
-        # Establish conection to mysql server
-        self.mydb = connector.connect(
-            host = host_name,
-            user = user_name,
-            password = pass_word
-        )
+#         # Establish conection to mysql server
+#         self.mydb = connector.connect(
+#             host = host_name,
+#             user = user_name,
+#             password = pass_word
+#         )
 
-        # Create a cursor to execute SQL queries
-        cursor = self.mydb.cursor()
+#         # Create a cursor to execute SQL queries
+#         cursor = self.mydb.cursor()
 
-        # Create database if it doesn't exist
-        cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database_name}")
+#         # Create database if it doesn't exist
+#         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database_name}")
 
-        # Connect to the created database
-        self.mydb = connector.connect(
-            host = host_name,
-            user = user_name,
-            password = pass_word,
-            database = database_name
-        )
+#         # Connect to the created database
+#         self.mydb = connector.connect(
+#             host = host_name,
+#             user = user_name,
+#             password = pass_word,
+#             database = database_name
+#         )
 
-        return self.mydb
+#         return self.mydb
 
-    # CREATE CLIENTS TABLE
-    def create_clients_table(self):
+#     # CREATE CLIENTS TABLE
+#     def create_clients_table(self):
         
-        # Create a cursor for executing SQL queries
-        cursor = self.create_connection().cursor()
+#         # Create a cursor for executing SQL queries
+#         cursor = self.create_connection().cursor()
 
-        # The query
-        create_clients_table_query = f"""
-CREATE TABLE IF NOT EXISTS clients_table(
-    prenom TEXT,
-    nom TEXT,
-    client_id VARCHAR(15) PRIMARY KEY,
-    entreprise TEXT,
-    adresse TEXT,
-    telephone VARCHAR(15),
-    genre TEXT
-)"""
+#         # The query
+#         create_clients_table_query = f"""
+# CREATE TABLE IF NOT EXISTS clients_table(
+#     prenom TEXT,
+#     nom TEXT,
+#     client_id VARCHAR(15) PRIMARY KEY,
+#     entreprise TEXT,
+#     adresse TEXT,
+#     telephone VARCHAR(15),
+#     genre TEXT
+# )"""
         
-        cursor.execute(create_clients_table_query)
+#         cursor.execute(create_clients_table_query)
 
-        # Commit changes and close the connection
-        self.mydb.commit()
-        self.mydb.close()
+#         # Commit changes and close the connection
+#         self.mydb.commit()
+#         self.mydb.close()
     
-    # Open Dialog for inserting new client
-    def open_add_client_student_dialog(self):
+#     # Open Dialog for inserting new client
+#     def open_add_client_student_dialog(self):
 
-        from ui_add_client import Ui_clients_dialog
+#         from ui_add_client import Ui_clients_dialog
 
-        add_client = Ui_clients_dialog(self)
-        result = add_client.exec()
+#         add_client = Ui_clients_dialog(self)
+#         result = add_client.exec()
 
-        if result == Ui_clients_dialog.accepted:
-            pass
+#         if result == Ui_clients_dialog.accepted:
+#             pass
 
     
