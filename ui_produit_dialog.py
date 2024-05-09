@@ -207,7 +207,7 @@ class Ui_dialog_produit(QDialog):
 
         self.splitter.addWidget(self.widget2)
 
-        self.retranslateUi(dialog_produit)
+        # self.retranslateUi(dialog_produit)
         self.btn_ajout_produit.clicked.connect(dialog_produit.show)
 
         QMetaObject.connectSlotsByName(dialog_produit)

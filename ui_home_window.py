@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QMainWindow, QSizePolicy,
     QSpacerItem, QToolButton, QWidget)
-import resources_rc
+import ressources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -120,5 +120,6 @@ class Ui_MainWindow(object):
         self.toolButton_providers.setText(QCoreApplication.translate("MainWindow", u"PRODUITS", None))
         self.toolButton_providers_4.setText(QCoreApplication.translate("MainWindow", u"CLIENTS", None))
         self.toolButton_providers_2.setText(QCoreApplication.translate("MainWindow", u"FOURNISSEURS", None))
+
     # retranslateUi
 

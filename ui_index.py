@@ -23,6 +23,7 @@ from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QFrame, QGridL
 import ressources_rc
 
 class Ui_MainWindow(object):
+
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -748,6 +749,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabsClosable(True)
         self.tabWidget.setMovable(True)
         self.tabWidget.setTabBarAutoHide(False)
+        self.tabWidget.tabCloseRequested.connect(self.closeTab)
         self.tab_00 = QWidget()
         self.tab_00.setObjectName(u"tab_00")
         self.label_20 = QLabel(self.tab_00)
@@ -776,6 +778,7 @@ class Ui_MainWindow(object):
         icon15.addFile(u":/icones/excel.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_export_excel_produit.setIcon(icon15)
         self.btn_ajout_produit = QPushButton(self.tab_01)
+        #self.btn_ajout_produit.clicked.connect(self.print())
         self.btn_ajout_produit.setObjectName(u"btn_ajout_produit")
         self.btn_ajout_produit.setGeometry(QRect(2, 36, 121, 32))
         self.btn_ajout_produit.setMinimumSize(QSize(0, 32))
@@ -939,8 +942,9 @@ class Ui_MainWindow(object):
         self.label_19.setGeometry(QRect(9, 10, 381, 16))
         self.label_19.setFont(font4)
         self.table_infos_client_2 = QTableWidget(self.tab_04)
-        if (self.table_infos_client_2.columnCount() < 9):
-            self.table_infos_client_2.setColumnCount(9)
+        self.table_infos_client_2.verticalHeader().setVisible(False)
+        if (self.table_infos_client_2.columnCount() < 7):
+            self.table_infos_client_2.setColumnCount(7)
         __qtablewidgetitem7 = QTableWidgetItem()
         self.table_infos_client_2.setHorizontalHeaderItem(0, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
@@ -960,7 +964,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem15 = QTableWidgetItem()
         self.table_infos_client_2.setHorizontalHeaderItem(8, __qtablewidgetitem15)
         self.table_infos_client_2.setObjectName(u"table_infos_client_2")
-        self.table_infos_client_2.setGeometry(QRect(10, 140, 885, 91))
+        self.table_infos_client_2.setGeometry(QRect(10, 140, 885, 1091))
         self.table_infos_client_2.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
 "	background-color: black;\n"
@@ -1121,7 +1125,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem6 = self.table_infos_client_3.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
         self.cherche_produit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher produit...", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Gestion R\u00e9f\u00e9rentiel Produit", None))
+        #self.label_21.setText(QCoreApplication.translate("MainWindow", u"Gestion R\u00e9f\u00e9rentiel Produit", None))
         self.btn_export_pdf_produit.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_01), QCoreApplication.translate("MainWindow", u"Produits", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Gestion des fournisseurs", None))
@@ -1132,25 +1136,25 @@ class Ui_MainWindow(object):
         self.ajout_client_btn_2.setText(QCoreApplication.translate("MainWindow", u"Ajouter client", None))
         self.export_excel_btn_2.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.cherche_client_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"Hello", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Gestion R\u00e9f\u00e9rentiel Client", None))
+        #self.label_18.setText(QCoreApplication.translate("MainWindow", u"Hello", None))
+        # self.label_19.setText(QCoreApplication.translate("MainWindow", u"Gestion R\u00e9f\u00e9rentiel Client", None))
         ___qtablewidgetitem7 = self.table_infos_client_2.horizontalHeaderItem(0)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"ID Client", None));
         ___qtablewidgetitem8 = self.table_infos_client_2.horizontalHeaderItem(1)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Pr\u00e9nom", None));
         ___qtablewidgetitem9 = self.table_infos_client_2.horizontalHeaderItem(2)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Nom", None));
-        ___qtablewidgetitem10 = self.table_infos_client_2.horizontalHeaderItem(3)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Genre", None));
-        ___qtablewidgetitem11 = self.table_infos_client_2.horizontalHeaderItem(4)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Entreprise", None));
-        ___qtablewidgetitem12 = self.table_infos_client_2.horizontalHeaderItem(5)
+        # ___qtablewidgetitem10 = self.table_infos_client_2.horizontalHeaderItem(3)
+        # ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Genre", None));
+        # ___qtablewidgetitem11 = self.table_infos_client_2.horizontalHeaderItem(4)
+        # ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Entreprise", None));
+        ___qtablewidgetitem12 = self.table_infos_client_2.horizontalHeaderItem(3)
         ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Adresse", None));
-        ___qtablewidgetitem13 = self.table_infos_client_2.horizontalHeaderItem(6)
+        ___qtablewidgetitem13 = self.table_infos_client_2.horizontalHeaderItem(4)
         ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"T\u00e9l\u00e9phone", None));
-        ___qtablewidgetitem14 = self.table_infos_client_2.horizontalHeaderItem(7)
+        ___qtablewidgetitem14 = self.table_infos_client_2.horizontalHeaderItem(5)
         ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Email", None));
-        ___qtablewidgetitem15 = self.table_infos_client_2.horizontalHeaderItem(8)
+        ___qtablewidgetitem15 = self.table_infos_client_2.horizontalHeaderItem(6)
         ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_04), QCoreApplication.translate("MainWindow", u"Clients", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Inventaire", None))
@@ -1170,5 +1174,26 @@ class Ui_MainWindow(object):
         self.label_31.setText(QCoreApplication.translate("MainWindow", u"Rapports Financiers", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_12), QCoreApplication.translate("MainWindow", u"Rapports Financiers", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Page", None))
+
     # retranslateUi
+
+        self.resizeEvent = self.resize_table
+
+    def resize_table(self, event):
+        width = self.width()
+        height = self.width()
+        print(self.height())
+        self.tab_01.resize(self.size())
+        print(self.size())
+        # Redimensionnez la table pour qu'elle s'adapte à la taille du conteneur
+        self.table_infos_client_2.resize(width, height)
+
+    def closeTab(self, index):
+            # Fonction pour fermer les onglets
+            self.tabWidget.removeTab(index)
+
+    def print(self):
+            print('bbbbbbbbb')
+
+
 

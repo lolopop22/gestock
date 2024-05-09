@@ -1,9 +1,12 @@
+import sys
 
 from mysql import connector
 # from back_logicel_gestion_stock import 
-
-from PySide6.QtWidgets import QMainWindow, QMenu
+import back_logicel_gestion_stock as bk
+from PySide6.QtWidgets import QMainWindow, QMenu, QApplication, QDialog, QTableWidgetItem
 from PySide6.QtGui import QAction
+
+import ui_client_dialog
 from ui_index import Ui_MainWindow
 from ui_produit_dialog import Ui_dialog_produit
 from ui_client_dialog import Ui_clients_dialog
@@ -58,7 +61,9 @@ class FrontPage(QMainWindow, Ui_MainWindow):
         self.btn_gestion_operations_1.clicked.connect(self.gestion_operations_context_menu)
         self.btn_gestion_compta_1.clicked.connect(self.gestion_comptabilite_context_menu)
 
-        self.btn_ajout_produit.clicked.connect(self.open_client_dialog)
+        self.btn_ajout_produit.clicked.connect(self.open_produit_dialog)
+        self.ajout_client_btn_2.clicked.connect(self.open_client_dialog)
+        self.refresh_table_client()
 
 #         # Connect to mysql server and create database if it doesn't exist
 #         # self.create_connection()
@@ -70,6 +75,8 @@ class FrontPage(QMainWindow, Ui_MainWindow):
 #         self.ajout_client_btn.clicked.connect(self.open_add_client_student_dialog)
 
     # Methods to switch to different tabs
+
+
     def switch_to_dashboard_tab(self):
         self.tabWidget.setCurrentIndex(0)
     
@@ -193,74 +200,36 @@ QMenu:selected{
             self.switch_to_rapports_financiers_tab()
 
     def open_client_dialog(self):
+
+
+        clients_dialog = QDialog()
+        ui = Ui_clients_dialog()
+        ui.setupUi(clients_dialog)
+        clients_dialog.exec_()
+
+        return ui
         print("hey")
-        clients_dialog = Ui_clients_dialog()
-        clients_dialog.open()
 
-#     # CREATE DATABASE CONNECTION
-#     def create_connection(self):
+    def open_produit_dialog(self):
 
-#         host_name = "localhost"
-#         user_name = "root"
-#         pass_word = "root"
-#         database_name = "gestock_db"
 
-#         # Establish conection to mysql server
-#         self.mydb = connector.connect(
-#             host = host_name,
-#             user = user_name,
-#             password = pass_word
-#         )
+        produits_dialog = QDialog()
+        ui = Ui_dialog_produit()
+        ui.setupUi(produits_dialog)
+        produits_dialog.exec_()
+        print("hey")
 
-#         # Create a cursor to execute SQL queries
-#         cursor = self.mydb.cursor()
+    def refresh_table_client(self):
+        # Récupération des données depuis la base de données
+        data = bk.get_all_clients()
 
-#         # Create database if it doesn't exist
-#         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database_name}")
+        # Effacer toutes les lignes actuelles du tableau
+        self.table_infos_client_2.setRowCount(0)
 
-#         # Connect to the created database
-#         self.mydb = connector.connect(
-#             host = host_name,
-#             user = user_name,
-#             password = pass_word,
-#             database = database_name
-#         )
+        # Insérer les nouvelles données dans le tableau
+        for row, client in enumerate(data):
+            self.table_infos_client_2.insertRow(row)
+            for col, value in enumerate(client.values()):
+                item = QTableWidgetItem(str(value))
+                self.table_infos_client_2.setItem(row, col, item)
 
-#         return self.mydb
-
-#     # CREATE CLIENTS TABLE
-#     def create_clients_table(self):
-        
-#         # Create a cursor for executing SQL queries
-#         cursor = self.create_connection().cursor()
-
-#         # The query
-#         create_clients_table_query = f"""
-# CREATE TABLE IF NOT EXISTS clients_table(
-#     prenom TEXT,
-#     nom TEXT,
-#     client_id VARCHAR(15) PRIMARY KEY,
-#     entreprise TEXT,
-#     adresse TEXT,
-#     telephone VARCHAR(15),
-#     genre TEXT
-# )"""
-        
-#         cursor.execute(create_clients_table_query)
-
-#         # Commit changes and close the connection
-#         self.mydb.commit()
-#         self.mydb.close()
-    
-#     # Open Dialog for inserting new client
-#     def open_add_client_student_dialog(self):
-
-#         from ui_add_client import Ui_clients_dialog
-
-#         add_client = Ui_clients_dialog(self)
-#         result = add_client.exec()
-
-#         if result == Ui_clients_dialog.accepted:
-#             pass
-
-    

@@ -177,12 +177,26 @@ def delete_composition_matieres_premieres(id_article, matiere_premiere_id, utili
 
 # Clients
 
+def get_all_clients():
 
-def add_client(id_client, nom_client, adresse_client, contact_client, utilisateur_id):
+
+    try:
+        conn, cur = connexion()
+        req = fr'SELECT id_client, prenom, nom, adresse, contact, utilisateur_id from "t_clients"'
+        cur.execute(req, ())
+        results = cur.fetchall()
+        dictionnaire = [{"id": result[0], "nom": result[1], "adresse": result[2], "contact": result[3], "utilisateur": result[4]} for result in results]
+        deconnexion(conn)
+        return dictionnaire
+    except:
+        return 'Erreur'
+
+
+def add_client(nom_client, adresse_client, contact_client, utilisateur_id):
     conn, cur = connexion()
     try:
-        req = fr'INSERT INTO "t_clients" (client_id, nom, adresse, contact, utilisateur_id) values (?,?,?,?,?)'
-        cur.execute(req, (id_client, nom_client, adresse_client, contact_client, utilisateur_id))
+        req = fr'INSERT INTO "t_clients" (nom, adresse, contact, utilisateur_id) values (?,?,?,?)'
+        cur.execute(req, (nom_client, adresse_client, contact_client, utilisateur_id))
         deconnexion(conn)
         return 'Client ajouté'
     except:
@@ -433,5 +447,6 @@ def delete_vente(vente_id, utilisateur_id):
     deconnexion(conn)
 
 
-print(add_approvisionnement(1, '06/04/2024', 3, 10, 1))
+print(get_all_clients())
+# print(add_approvisionnement(1, '06/04/2024', 3, 10, 1))
 # add_paiement(2, 'Carte', 10000,1)

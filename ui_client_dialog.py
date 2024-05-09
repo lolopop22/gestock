@@ -18,6 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
+import back_logicel_gestion_stock as bk
+
 
 class Ui_clients_dialog(QDialog):
     def setupUi(self, clients_dialog):
@@ -180,6 +182,7 @@ class Ui_clients_dialog(QDialog):
         self.horizontalLayout.addWidget(self.annule_buton)
 
         self.ok_bouton = QPushButton(self.layoutWidget1)
+        self.ok_bouton.clicked.connect(self.validate_dialog)
         self.ok_bouton.setObjectName(u"ok_bouton")
         self.ok_bouton.setMinimumSize(QSize(0, 32))
         self.ok_bouton.setStyleSheet(u"QPushButton{\n"
@@ -198,6 +201,22 @@ class Ui_clients_dialog(QDialog):
 
         QMetaObject.connectSlotsByName(clients_dialog)
     # setupUi
+
+    def get_info_dialog_client(self):
+        nom = self.nom_lineEdit.text()
+        entreprise = self.entreprise_lineEdit.text()
+        adresse = self.adresse_lineEdit.text()
+        telephone = self.telephone_lineEdit.text()
+        email = self.mail_lineEdit.text()
+
+        return nom, adresse, telephone, email
+
+    def validate_dialog(self):
+        nom, adresse, telephone, email = self.get_info_dialog_client()
+        print(nom, adresse, telephone, email)
+        bk.add_client(nom, adresse, telephone, email)
+
+
 
     def retranslateUi(self, clients_dialog):
         clients_dialog.setWindowTitle(QCoreApplication.translate("clients_dialog", u"Dialog", None))
