@@ -5,6 +5,8 @@ from mysql import connector
 from PySide6.QtWidgets import QMainWindow, QMenu
 from PySide6.QtGui import QAction
 from ui_index import Ui_MainWindow
+from ui_produit_dialog import Ui_dialog_produit
+from ui_client_dialog import Ui_clients_dialog
 
 
 class FrontPage(QMainWindow, Ui_MainWindow):
@@ -55,6 +57,8 @@ class FrontPage(QMainWindow, Ui_MainWindow):
         self.btn_gestion_produits_1.clicked.connect(self.gestion_produit_context_menu)
         self.btn_gestion_operations_1.clicked.connect(self.gestion_operations_context_menu)
         self.btn_gestion_compta_1.clicked.connect(self.gestion_comptabilite_context_menu)
+
+        self.btn_ajout_produit.clicked.connect(self.open_client_dialog)
 
 #         # Connect to mysql server and create database if it doesn't exist
 #         # self.create_connection()
@@ -137,7 +141,6 @@ class FrontPage(QMainWindow, Ui_MainWindow):
         self.show_custom_context_menu(self.btn_gestion_compta_1, ["Dépenses", "Flux monétaires", "Rapports financiers"])
 
 
-
     def show_custom_context_menu(self, button, menu_items):
         menu = QMenu(self)
         
@@ -188,6 +191,11 @@ QMenu:selected{
             self.switch_to_flux_monetaires_tab()
         elif text == "Rapports financiers":
             self.switch_to_rapports_financiers_tab()
+
+    def open_client_dialog(self):
+        print("hey")
+        clients_dialog = Ui_clients_dialog()
+        clients_dialog.open()
 
 #     # CREATE DATABASE CONNECTION
 #     def create_connection(self):

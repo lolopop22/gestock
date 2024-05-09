@@ -142,7 +142,7 @@ def add_audit_stock_matiere_premiere(matiere_premier_id, quantite, date_mouvemen
         return 'Error'
 
 
-# Clients
+# Compositions
 
 
 def add_composition_matieres_premieres(id_article, matiere_premiere_id, quantite, utilisateur_id):
@@ -178,11 +178,11 @@ def delete_composition_matieres_premieres(id_article, matiere_premiere_id, utili
 # Clients
 
 
-def add_client(id_client, nom, adresse, contact, utilisateur_id):
+def add_client(id_client, nom_client, adresse_client, contact_client, utilisateur_id):
     conn, cur = connexion()
     try:
         req = fr'INSERT INTO "t_clients" (client_id, nom, adresse, contact, utilisateur_id) values (?,?,?,?,?)'
-        cur.execute(req, (id_client, nom, adresse, contact, utilisateur_id))
+        cur.execute(req, (id_client, nom_client, adresse_client, contact_client, utilisateur_id))
         deconnexion(conn)
         return 'Client ajouté'
     except:

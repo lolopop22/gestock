@@ -46,7 +46,7 @@ QComboBox{
 	height: 35px;
 	padding-left: 15px;
 	font-weight: bold;
-	selction-background-color: #290B9;
+	selection-background-color: #2980B9;
 }</string>
   </property>
   <property name="modal">

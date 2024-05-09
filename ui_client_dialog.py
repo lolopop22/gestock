@@ -20,12 +20,11 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
     QVBoxLayout, QWidget)
 
 class Ui_clients_dialog(QDialog):
-    def __init__(self, parent = None):
-
-        super().__init__(parent)
-
-        self.resize(548, 625)
-        self.setStyleSheet(u"QDialog{\n"
+    def setupUi(self, clients_dialog):
+        if not clients_dialog.objectName():
+            clients_dialog.setObjectName(u"clients_dialog")
+        clients_dialog.resize(548, 625)
+        clients_dialog.setStyleSheet(u"QDialog{\n"
 "	background-color: white;\n"
 "}\n"
 "\n"
@@ -47,12 +46,12 @@ class Ui_clients_dialog(QDialog):
 "	font-weight: bold;\n"
 "	selction-background-color: #290B9;\n"
 "}")
-        self.line = QFrame(self)
+        self.line = QFrame(clients_dialog)
         self.line.setObjectName(u"line")
         self.line.setGeometry(QRect(0, 60, 548, 20))
         self.line.setFrameShape(QFrame.Shape.HLine)
         self.line.setFrameShadow(QFrame.Shadow.Sunken)
-        self.label = QLabel(self)
+        self.label = QLabel(clients_dialog)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(10, 20, 281, 31))
         font = QFont()
@@ -60,7 +59,7 @@ class Ui_clients_dialog(QDialog):
         font.setPointSize(20)
         font.setBold(True)
         self.label.setFont(font)
-        self.layoutWidget = QWidget(self)
+        self.layoutWidget = QWidget(clients_dialog)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(10, 81, 531, 477))
         self.verticalLayout_8 = QVBoxLayout(self.layoutWidget)
@@ -160,7 +159,7 @@ class Ui_clients_dialog(QDialog):
 
         self.verticalLayout_8.addLayout(self.verticalLayout_7)
 
-        self.layoutWidget1 = QWidget(self)
+        self.layoutWidget1 = QWidget(clients_dialog)
         self.layoutWidget1.setObjectName(u"layoutWidget1")
         self.layoutWidget1.setGeometry(QRect(280, 570, 261, 34))
         self.horizontalLayout = QHBoxLayout(self.layoutWidget1)
@@ -195,13 +194,13 @@ class Ui_clients_dialog(QDialog):
         self.horizontalLayout.addWidget(self.ok_bouton)
 
 
-        self.retranslateUi(self)
+        self.retranslateUi(clients_dialog)
 
-        QMetaObject.connectSlotsByName(self)
+        QMetaObject.connectSlotsByName(clients_dialog)
     # setupUi
 
     def retranslateUi(self, clients_dialog):
-        clients_dialog.setWindowTitle(QCoreApplication.translate("clients_dialog", u"Clients", None))
+        clients_dialog.setWindowTitle(QCoreApplication.translate("clients_dialog", u"Dialog", None))
         self.label.setText(QCoreApplication.translate("clients_dialog", u"Ajouter nouveau client", None))
         self.label_3.setText(QCoreApplication.translate("clients_dialog", u"Nom", None))
         self.label_4.setText(QCoreApplication.translate("clients_dialog", u"Entreprise", None))

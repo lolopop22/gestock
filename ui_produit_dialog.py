@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
     QSizePolicy, QSpacerItem, QSplitter, QVBoxLayout,
     QWidget)
 
-class Ui_dialog_produit(object):
+class Ui_dialog_produit(QDialog):
     def setupUi(self, dialog_produit):
         if not dialog_produit.objectName():
             dialog_produit.setObjectName(u"dialog_produit")
@@ -47,7 +47,7 @@ class Ui_dialog_produit(object):
 "	height: 35px;\n"
 "	padding-left: 15px;\n"
 "	font-weight: bold;\n"
-"	selction-background-color: #290B9;\n"
+"	selection-background-color: #2980B9;\n"
 "}")
         dialog_produit.setModal(True)
         self.layoutWidget = QWidget(dialog_produit)
