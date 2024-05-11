@@ -588,6 +588,7 @@ class Ui_MainWindow(object):
 
         self.widget1 = QWidget(self.widget)
         self.widget1.setObjectName(u"widget1")
+        self.widget1.setEnabled(True)
         self.gridLayout_2 = QGridLayout(self.widget1)
         self.gridLayout_2.setSpacing(6)
         self.gridLayout_2.setContentsMargins(9, 9, 9, 9)
@@ -694,6 +695,117 @@ class Ui_MainWindow(object):
         font5.setPointSize(25)
         self.label_20.setFont(font5)
         self.tabWidget.addTab(self.tab_dashboard, "")
+        self.tab_matieres_premieres = QWidget()
+        self.tab_matieres_premieres.setObjectName(u"tab_matieres_premieres")
+        self.gridLayout_17 = QGridLayout(self.tab_matieres_premieres)
+        self.gridLayout_17.setSpacing(6)
+        self.gridLayout_17.setContentsMargins(9, 9, 9, 9)
+        self.gridLayout_17.setObjectName(u"gridLayout_17")
+        self.table_infos_matiere_premiere = QTableWidget(self.tab_matieres_premieres)
+        if (self.table_infos_matiere_premiere.columnCount() < 8):
+            self.table_infos_matiere_premiere.setColumnCount(8)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.table_infos_matiere_premiere.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.table_infos_matiere_premiere.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.table_infos_matiere_premiere.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.table_infos_matiere_premiere.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.table_infos_matiere_premiere.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.table_infos_matiere_premiere.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.table_infos_matiere_premiere.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.table_infos_matiere_premiere.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        self.table_infos_matiere_premiere.setObjectName(u"table_infos_matiere_premiere")
+        self.table_infos_matiere_premiere.setStyleSheet(u"QHeaderView::section{\n"
+"	font-weight: bold;\n"
+"	background-color: black;\n"
+"	color: white;\n"
+"}\n"
+"\n"
+"QTablewidget{\n"
+"	alternate-background-color: #B0EDFB;\n"
+"	background-color: #F4F9FA;\n"
+"}")
+        self.table_infos_matiere_premiere.setAlternatingRowColors(True)
+        self.table_infos_matiere_premiere.horizontalHeader().setCascadingSectionResizes(True)
+        self.table_infos_matiere_premiere.horizontalHeader().setDefaultSectionSize(150)
+        self.table_infos_matiere_premiere.horizontalHeader().setProperty("showSortIndicator", True)
+        self.table_infos_matiere_premiere.horizontalHeader().setStretchLastSection(True)
+        self.table_infos_matiere_premiere.verticalHeader().setVisible(False)
+
+        self.gridLayout_17.addWidget(self.table_infos_matiere_premiere, 1, 0, 1, 3)
+
+        self.cherche_matiere_premiere = QLineEdit(self.tab_matieres_premieres)
+        self.cherche_matiere_premiere.setObjectName(u"cherche_matiere_premiere")
+        self.cherche_matiere_premiere.setMinimumSize(QSize(0, 32))
+        self.cherche_matiere_premiere.setMaximumSize(QSize(407, 31))
+        self.cherche_matiere_premiere.setStyleSheet(u"QLineEdit{\n"
+"	padding-left: 20px;\n"
+"	border: 1px solid gray;\n"
+"	border-radius:10px\n"
+"}")
+
+        self.gridLayout_17.addWidget(self.cherche_matiere_premiere, 0, 2, 1, 1)
+
+        self.widget_3 = QWidget(self.tab_matieres_premieres)
+        self.widget_3.setObjectName(u"widget_3")
+        self.btn_ajout_matiere_premiere = QPushButton(self.widget_3)
+        self.btn_ajout_matiere_premiere.setObjectName(u"btn_ajout_matiere_premiere")
+        self.btn_ajout_matiere_premiere.setGeometry(QRect(0, 0, 122, 32))
+        self.btn_ajout_matiere_premiere.setMinimumSize(QSize(0, 32))
+        self.btn_ajout_matiere_premiere.setMaximumSize(QSize(122, 32))
+        self.btn_ajout_matiere_premiere.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	color: white;\n"
+"	border: none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 12px\n"
+"}")
+        icon15 = QIcon()
+        icon15.addFile(u":/icones/add.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_ajout_matiere_premiere.setIcon(icon15)
+        self.btn_export_excel_matiere_premiere = QPushButton(self.widget_3)
+        self.btn_export_excel_matiere_premiere.setObjectName(u"btn_export_excel_matiere_premiere")
+        self.btn_export_excel_matiere_premiere.setGeometry(QRect(140, 0, 122, 32))
+        self.btn_export_excel_matiere_premiere.setMinimumSize(QSize(0, 32))
+        self.btn_export_excel_matiere_premiere.setMaximumSize(QSize(122, 32))
+        self.btn_export_excel_matiere_premiere.setStyleSheet(u"QPushButton{\n"
+"	background-color: #34D481;\n"
+"	color: white;\n"
+"	border: none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 12px\n"
+"}")
+        icon16 = QIcon()
+        icon16.addFile(u":/icones/excel.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_export_excel_matiere_premiere.setIcon(icon16)
+        self.btn_export_pdf_matiere_premiere = QPushButton(self.widget_3)
+        self.btn_export_pdf_matiere_premiere.setObjectName(u"btn_export_pdf_matiere_premiere")
+        self.btn_export_pdf_matiere_premiere.setGeometry(QRect(280, 0, 122, 32))
+        self.btn_export_pdf_matiere_premiere.setMinimumSize(QSize(0, 32))
+        self.btn_export_pdf_matiere_premiere.setMaximumSize(QSize(122, 32))
+        self.btn_export_pdf_matiere_premiere.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(255, 58, 21);\n"
+"	color: white;\n"
+"	border: none;\n"
+"	border-radius: 8px;\n"
+"	font-weight: bold;\n"
+"	font-size: 12px\n"
+"}")
+        icon17 = QIcon()
+        icon17.addFile(u":/icones/pdf.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_export_pdf_matiere_premiere.setIcon(icon17)
+
+        self.gridLayout_17.addWidget(self.widget_3, 0, 0, 1, 2)
+
+        self.tabWidget.addTab(self.tab_matieres_premieres, "")
         self.tab_produits = QWidget()
         self.tab_produits.setObjectName(u"tab_produits")
         self.gridLayout_12 = QGridLayout(self.tab_produits)
@@ -713,22 +825,24 @@ class Ui_MainWindow(object):
         self.gridLayout_12.addWidget(self.cherche_produit, 1, 1, 1, 1)
 
         self.table_infos_client_4 = QTableWidget(self.tab_produits)
-        if (self.table_infos_client_4.columnCount() < 7):
-            self.table_infos_client_4.setColumnCount(7)
-        __qtablewidgetitem = QTableWidgetItem()
-        self.table_infos_client_4.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        self.table_infos_client_4.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        self.table_infos_client_4.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        self.table_infos_client_4.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        self.table_infos_client_4.setHorizontalHeaderItem(4, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.table_infos_client_4.setHorizontalHeaderItem(5, __qtablewidgetitem5)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        self.table_infos_client_4.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        if (self.table_infos_client_4.columnCount() < 8):
+            self.table_infos_client_4.setColumnCount(8)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.table_infos_client_4.setHorizontalHeaderItem(0, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.table_infos_client_4.setHorizontalHeaderItem(1, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.table_infos_client_4.setHorizontalHeaderItem(2, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.table_infos_client_4.setHorizontalHeaderItem(3, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.table_infos_client_4.setHorizontalHeaderItem(4, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.table_infos_client_4.setHorizontalHeaderItem(5, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.table_infos_client_4.setHorizontalHeaderItem(6, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.table_infos_client_4.setHorizontalHeaderItem(7, __qtablewidgetitem15)
         self.table_infos_client_4.setObjectName(u"table_infos_client_4")
         self.table_infos_client_4.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -764,8 +878,6 @@ class Ui_MainWindow(object):
 "	font-weight: bold;\n"
 "	font-size: 12px\n"
 "}")
-        icon15 = QIcon()
-        icon15.addFile(u":/icones/add.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_ajout_produit.setIcon(icon15)
         self.btn_export_excel_produit = QPushButton(self.widget_12)
         self.btn_export_excel_produit.setObjectName(u"btn_export_excel_produit")
@@ -780,8 +892,6 @@ class Ui_MainWindow(object):
 "	font-weight: bold;\n"
 "	font-size: 12px\n"
 "}")
-        icon16 = QIcon()
-        icon16.addFile(u":/icones/excel.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_export_excel_produit.setIcon(icon16)
         self.btn_export_pdf_produit = QPushButton(self.widget_12)
         self.btn_export_pdf_produit.setObjectName(u"btn_export_pdf_produit")
@@ -796,8 +906,6 @@ class Ui_MainWindow(object):
 "	font-weight: bold;\n"
 "	font-size: 12px\n"
 "}")
-        icon17 = QIcon()
-        icon17.addFile(u":/icones/pdf.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_export_pdf_produit.setIcon(icon17)
 
         self.gridLayout_12.addWidget(self.widget_12, 1, 0, 1, 1)
@@ -824,22 +932,22 @@ class Ui_MainWindow(object):
         self.table_infos_fournisseur = QTableWidget(self.tab_fournisseurs)
         if (self.table_infos_fournisseur.columnCount() < 8):
             self.table_infos_fournisseur.setColumnCount(8)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.table_infos_fournisseur.setHorizontalHeaderItem(0, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        self.table_infos_fournisseur.setHorizontalHeaderItem(1, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        self.table_infos_fournisseur.setHorizontalHeaderItem(2, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        self.table_infos_fournisseur.setHorizontalHeaderItem(3, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        self.table_infos_fournisseur.setHorizontalHeaderItem(4, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        self.table_infos_fournisseur.setHorizontalHeaderItem(5, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.table_infos_fournisseur.setHorizontalHeaderItem(6, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.table_infos_fournisseur.setHorizontalHeaderItem(7, __qtablewidgetitem14)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.table_infos_fournisseur.setHorizontalHeaderItem(0, __qtablewidgetitem16)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.table_infos_fournisseur.setHorizontalHeaderItem(1, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.table_infos_fournisseur.setHorizontalHeaderItem(2, __qtablewidgetitem18)
+        __qtablewidgetitem19 = QTableWidgetItem()
+        self.table_infos_fournisseur.setHorizontalHeaderItem(3, __qtablewidgetitem19)
+        __qtablewidgetitem20 = QTableWidgetItem()
+        self.table_infos_fournisseur.setHorizontalHeaderItem(4, __qtablewidgetitem20)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.table_infos_fournisseur.setHorizontalHeaderItem(5, __qtablewidgetitem21)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.table_infos_fournisseur.setHorizontalHeaderItem(6, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.table_infos_fournisseur.setHorizontalHeaderItem(7, __qtablewidgetitem23)
         self.table_infos_fournisseur.setObjectName(u"table_infos_fournisseur")
         self.table_infos_fournisseur.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -926,18 +1034,18 @@ class Ui_MainWindow(object):
         self.table_infos_entrepot = QTableWidget(self.tab_entrepots)
         if (self.table_infos_entrepot.columnCount() < 6):
             self.table_infos_entrepot.setColumnCount(6)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        self.table_infos_entrepot.setHorizontalHeaderItem(0, __qtablewidgetitem15)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.table_infos_entrepot.setHorizontalHeaderItem(1, __qtablewidgetitem16)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.table_infos_entrepot.setHorizontalHeaderItem(2, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.table_infos_entrepot.setHorizontalHeaderItem(3, __qtablewidgetitem18)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.table_infos_entrepot.setHorizontalHeaderItem(4, __qtablewidgetitem19)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.table_infos_entrepot.setHorizontalHeaderItem(5, __qtablewidgetitem20)
+        __qtablewidgetitem24 = QTableWidgetItem()
+        self.table_infos_entrepot.setHorizontalHeaderItem(0, __qtablewidgetitem24)
+        __qtablewidgetitem25 = QTableWidgetItem()
+        self.table_infos_entrepot.setHorizontalHeaderItem(1, __qtablewidgetitem25)
+        __qtablewidgetitem26 = QTableWidgetItem()
+        self.table_infos_entrepot.setHorizontalHeaderItem(2, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.table_infos_entrepot.setHorizontalHeaderItem(3, __qtablewidgetitem27)
+        __qtablewidgetitem28 = QTableWidgetItem()
+        self.table_infos_entrepot.setHorizontalHeaderItem(4, __qtablewidgetitem28)
+        __qtablewidgetitem29 = QTableWidgetItem()
+        self.table_infos_entrepot.setHorizontalHeaderItem(5, __qtablewidgetitem29)
         self.table_infos_entrepot.setObjectName(u"table_infos_entrepot")
         self.table_infos_entrepot.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1059,24 +1167,24 @@ class Ui_MainWindow(object):
         self.table_infos_client_2 = QTableWidget(self.tab_client)
         if (self.table_infos_client_2.columnCount() < 9):
             self.table_infos_client_2.setColumnCount(9)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(0, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(1, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(2, __qtablewidgetitem23)
-        __qtablewidgetitem24 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(3, __qtablewidgetitem24)
-        __qtablewidgetitem25 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(4, __qtablewidgetitem25)
-        __qtablewidgetitem26 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(5, __qtablewidgetitem26)
-        __qtablewidgetitem27 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(6, __qtablewidgetitem27)
-        __qtablewidgetitem28 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(7, __qtablewidgetitem28)
-        __qtablewidgetitem29 = QTableWidgetItem()
-        self.table_infos_client_2.setHorizontalHeaderItem(8, __qtablewidgetitem29)
+        __qtablewidgetitem30 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(0, __qtablewidgetitem30)
+        __qtablewidgetitem31 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(1, __qtablewidgetitem31)
+        __qtablewidgetitem32 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(2, __qtablewidgetitem32)
+        __qtablewidgetitem33 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(3, __qtablewidgetitem33)
+        __qtablewidgetitem34 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(4, __qtablewidgetitem34)
+        __qtablewidgetitem35 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(5, __qtablewidgetitem35)
+        __qtablewidgetitem36 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(6, __qtablewidgetitem36)
+        __qtablewidgetitem37 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(7, __qtablewidgetitem37)
+        __qtablewidgetitem38 = QTableWidgetItem()
+        self.table_infos_client_2.setHorizontalHeaderItem(8, __qtablewidgetitem38)
         self.table_infos_client_2.setObjectName(u"table_infos_client_2")
         self.table_infos_client_2.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1126,24 +1234,24 @@ class Ui_MainWindow(object):
         self.table_infos_inventaire = QTableWidget(self.tab_inventaires)
         if (self.table_infos_inventaire.columnCount() < 9):
             self.table_infos_inventaire.setColumnCount(9)
-        __qtablewidgetitem30 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(0, __qtablewidgetitem30)
-        __qtablewidgetitem31 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(1, __qtablewidgetitem31)
-        __qtablewidgetitem32 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(2, __qtablewidgetitem32)
-        __qtablewidgetitem33 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(3, __qtablewidgetitem33)
-        __qtablewidgetitem34 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(4, __qtablewidgetitem34)
-        __qtablewidgetitem35 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(5, __qtablewidgetitem35)
-        __qtablewidgetitem36 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(6, __qtablewidgetitem36)
-        __qtablewidgetitem37 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(7, __qtablewidgetitem37)
-        __qtablewidgetitem38 = QTableWidgetItem()
-        self.table_infos_inventaire.setHorizontalHeaderItem(8, __qtablewidgetitem38)
+        __qtablewidgetitem39 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(0, __qtablewidgetitem39)
+        __qtablewidgetitem40 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(1, __qtablewidgetitem40)
+        __qtablewidgetitem41 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(2, __qtablewidgetitem41)
+        __qtablewidgetitem42 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(3, __qtablewidgetitem42)
+        __qtablewidgetitem43 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(4, __qtablewidgetitem43)
+        __qtablewidgetitem44 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(5, __qtablewidgetitem44)
+        __qtablewidgetitem45 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(6, __qtablewidgetitem45)
+        __qtablewidgetitem46 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(7, __qtablewidgetitem46)
+        __qtablewidgetitem47 = QTableWidgetItem()
+        self.table_infos_inventaire.setHorizontalHeaderItem(8, __qtablewidgetitem47)
         self.table_infos_inventaire.setObjectName(u"table_infos_inventaire")
         self.table_infos_inventaire.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1245,22 +1353,22 @@ class Ui_MainWindow(object):
         self.table_infos_ventes_retours = QTableWidget(self.tab_vente_retour)
         if (self.table_infos_ventes_retours.columnCount() < 8):
             self.table_infos_ventes_retours.setColumnCount(8)
-        __qtablewidgetitem39 = QTableWidgetItem()
-        self.table_infos_ventes_retours.setHorizontalHeaderItem(0, __qtablewidgetitem39)
-        __qtablewidgetitem40 = QTableWidgetItem()
-        self.table_infos_ventes_retours.setHorizontalHeaderItem(1, __qtablewidgetitem40)
-        __qtablewidgetitem41 = QTableWidgetItem()
-        self.table_infos_ventes_retours.setHorizontalHeaderItem(2, __qtablewidgetitem41)
-        __qtablewidgetitem42 = QTableWidgetItem()
-        self.table_infos_ventes_retours.setHorizontalHeaderItem(3, __qtablewidgetitem42)
-        __qtablewidgetitem43 = QTableWidgetItem()
-        self.table_infos_ventes_retours.setHorizontalHeaderItem(4, __qtablewidgetitem43)
-        __qtablewidgetitem44 = QTableWidgetItem()
-        self.table_infos_ventes_retours.setHorizontalHeaderItem(5, __qtablewidgetitem44)
-        __qtablewidgetitem45 = QTableWidgetItem()
-        self.table_infos_ventes_retours.setHorizontalHeaderItem(6, __qtablewidgetitem45)
-        __qtablewidgetitem46 = QTableWidgetItem()
-        self.table_infos_ventes_retours.setHorizontalHeaderItem(7, __qtablewidgetitem46)
+        __qtablewidgetitem48 = QTableWidgetItem()
+        self.table_infos_ventes_retours.setHorizontalHeaderItem(0, __qtablewidgetitem48)
+        __qtablewidgetitem49 = QTableWidgetItem()
+        self.table_infos_ventes_retours.setHorizontalHeaderItem(1, __qtablewidgetitem49)
+        __qtablewidgetitem50 = QTableWidgetItem()
+        self.table_infos_ventes_retours.setHorizontalHeaderItem(2, __qtablewidgetitem50)
+        __qtablewidgetitem51 = QTableWidgetItem()
+        self.table_infos_ventes_retours.setHorizontalHeaderItem(3, __qtablewidgetitem51)
+        __qtablewidgetitem52 = QTableWidgetItem()
+        self.table_infos_ventes_retours.setHorizontalHeaderItem(4, __qtablewidgetitem52)
+        __qtablewidgetitem53 = QTableWidgetItem()
+        self.table_infos_ventes_retours.setHorizontalHeaderItem(5, __qtablewidgetitem53)
+        __qtablewidgetitem54 = QTableWidgetItem()
+        self.table_infos_ventes_retours.setHorizontalHeaderItem(6, __qtablewidgetitem54)
+        __qtablewidgetitem55 = QTableWidgetItem()
+        self.table_infos_ventes_retours.setHorizontalHeaderItem(7, __qtablewidgetitem55)
         self.table_infos_ventes_retours.setObjectName(u"table_infos_ventes_retours")
         self.table_infos_ventes_retours.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1339,22 +1447,22 @@ class Ui_MainWindow(object):
         self.table_infos_mvt_stock = QTableWidget(self.tab_mvt_stock)
         if (self.table_infos_mvt_stock.columnCount() < 8):
             self.table_infos_mvt_stock.setColumnCount(8)
-        __qtablewidgetitem47 = QTableWidgetItem()
-        self.table_infos_mvt_stock.setHorizontalHeaderItem(0, __qtablewidgetitem47)
-        __qtablewidgetitem48 = QTableWidgetItem()
-        self.table_infos_mvt_stock.setHorizontalHeaderItem(1, __qtablewidgetitem48)
-        __qtablewidgetitem49 = QTableWidgetItem()
-        self.table_infos_mvt_stock.setHorizontalHeaderItem(2, __qtablewidgetitem49)
-        __qtablewidgetitem50 = QTableWidgetItem()
-        self.table_infos_mvt_stock.setHorizontalHeaderItem(3, __qtablewidgetitem50)
-        __qtablewidgetitem51 = QTableWidgetItem()
-        self.table_infos_mvt_stock.setHorizontalHeaderItem(4, __qtablewidgetitem51)
-        __qtablewidgetitem52 = QTableWidgetItem()
-        self.table_infos_mvt_stock.setHorizontalHeaderItem(5, __qtablewidgetitem52)
-        __qtablewidgetitem53 = QTableWidgetItem()
-        self.table_infos_mvt_stock.setHorizontalHeaderItem(6, __qtablewidgetitem53)
-        __qtablewidgetitem54 = QTableWidgetItem()
-        self.table_infos_mvt_stock.setHorizontalHeaderItem(7, __qtablewidgetitem54)
+        __qtablewidgetitem56 = QTableWidgetItem()
+        self.table_infos_mvt_stock.setHorizontalHeaderItem(0, __qtablewidgetitem56)
+        __qtablewidgetitem57 = QTableWidgetItem()
+        self.table_infos_mvt_stock.setHorizontalHeaderItem(1, __qtablewidgetitem57)
+        __qtablewidgetitem58 = QTableWidgetItem()
+        self.table_infos_mvt_stock.setHorizontalHeaderItem(2, __qtablewidgetitem58)
+        __qtablewidgetitem59 = QTableWidgetItem()
+        self.table_infos_mvt_stock.setHorizontalHeaderItem(3, __qtablewidgetitem59)
+        __qtablewidgetitem60 = QTableWidgetItem()
+        self.table_infos_mvt_stock.setHorizontalHeaderItem(4, __qtablewidgetitem60)
+        __qtablewidgetitem61 = QTableWidgetItem()
+        self.table_infos_mvt_stock.setHorizontalHeaderItem(5, __qtablewidgetitem61)
+        __qtablewidgetitem62 = QTableWidgetItem()
+        self.table_infos_mvt_stock.setHorizontalHeaderItem(6, __qtablewidgetitem62)
+        __qtablewidgetitem63 = QTableWidgetItem()
+        self.table_infos_mvt_stock.setHorizontalHeaderItem(7, __qtablewidgetitem63)
         self.table_infos_mvt_stock.setObjectName(u"table_infos_mvt_stock")
         self.table_infos_mvt_stock.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1439,26 +1547,26 @@ class Ui_MainWindow(object):
         self.table_infos_livraison = QTableWidget(self.tab_livraison)
         if (self.table_infos_livraison.columnCount() < 10):
             self.table_infos_livraison.setColumnCount(10)
-        __qtablewidgetitem55 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(0, __qtablewidgetitem55)
-        __qtablewidgetitem56 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(1, __qtablewidgetitem56)
-        __qtablewidgetitem57 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(2, __qtablewidgetitem57)
-        __qtablewidgetitem58 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(3, __qtablewidgetitem58)
-        __qtablewidgetitem59 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(4, __qtablewidgetitem59)
-        __qtablewidgetitem60 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(5, __qtablewidgetitem60)
-        __qtablewidgetitem61 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(6, __qtablewidgetitem61)
-        __qtablewidgetitem62 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(7, __qtablewidgetitem62)
-        __qtablewidgetitem63 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(8, __qtablewidgetitem63)
         __qtablewidgetitem64 = QTableWidgetItem()
-        self.table_infos_livraison.setHorizontalHeaderItem(9, __qtablewidgetitem64)
+        self.table_infos_livraison.setHorizontalHeaderItem(0, __qtablewidgetitem64)
+        __qtablewidgetitem65 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(1, __qtablewidgetitem65)
+        __qtablewidgetitem66 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(2, __qtablewidgetitem66)
+        __qtablewidgetitem67 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(3, __qtablewidgetitem67)
+        __qtablewidgetitem68 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(4, __qtablewidgetitem68)
+        __qtablewidgetitem69 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(5, __qtablewidgetitem69)
+        __qtablewidgetitem70 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(6, __qtablewidgetitem70)
+        __qtablewidgetitem71 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(7, __qtablewidgetitem71)
+        __qtablewidgetitem72 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(8, __qtablewidgetitem72)
+        __qtablewidgetitem73 = QTableWidgetItem()
+        self.table_infos_livraison.setHorizontalHeaderItem(9, __qtablewidgetitem73)
         self.table_infos_livraison.setObjectName(u"table_infos_livraison")
         self.table_infos_livraison.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1533,12 +1641,12 @@ class Ui_MainWindow(object):
         self.table_infos_flux_monetaire_cate = QTableWidget(self.tab_flux_monetaire)
         if (self.table_infos_flux_monetaire_cate.columnCount() < 3):
             self.table_infos_flux_monetaire_cate.setColumnCount(3)
-        __qtablewidgetitem65 = QTableWidgetItem()
-        self.table_infos_flux_monetaire_cate.setHorizontalHeaderItem(0, __qtablewidgetitem65)
-        __qtablewidgetitem66 = QTableWidgetItem()
-        self.table_infos_flux_monetaire_cate.setHorizontalHeaderItem(1, __qtablewidgetitem66)
-        __qtablewidgetitem67 = QTableWidgetItem()
-        self.table_infos_flux_monetaire_cate.setHorizontalHeaderItem(2, __qtablewidgetitem67)
+        __qtablewidgetitem74 = QTableWidgetItem()
+        self.table_infos_flux_monetaire_cate.setHorizontalHeaderItem(0, __qtablewidgetitem74)
+        __qtablewidgetitem75 = QTableWidgetItem()
+        self.table_infos_flux_monetaire_cate.setHorizontalHeaderItem(1, __qtablewidgetitem75)
+        __qtablewidgetitem76 = QTableWidgetItem()
+        self.table_infos_flux_monetaire_cate.setHorizontalHeaderItem(2, __qtablewidgetitem76)
         self.table_infos_flux_monetaire_cate.setObjectName(u"table_infos_flux_monetaire_cate")
         self.table_infos_flux_monetaire_cate.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1606,10 +1714,10 @@ class Ui_MainWindow(object):
         self.table_infos_flux_monetaire_3 = QTableWidget(self.tab_flux_monetaire)
         if (self.table_infos_flux_monetaire_3.columnCount() < 2):
             self.table_infos_flux_monetaire_3.setColumnCount(2)
-        __qtablewidgetitem68 = QTableWidgetItem()
-        self.table_infos_flux_monetaire_3.setHorizontalHeaderItem(0, __qtablewidgetitem68)
-        __qtablewidgetitem69 = QTableWidgetItem()
-        self.table_infos_flux_monetaire_3.setHorizontalHeaderItem(1, __qtablewidgetitem69)
+        __qtablewidgetitem77 = QTableWidgetItem()
+        self.table_infos_flux_monetaire_3.setHorizontalHeaderItem(0, __qtablewidgetitem77)
+        __qtablewidgetitem78 = QTableWidgetItem()
+        self.table_infos_flux_monetaire_3.setHorizontalHeaderItem(1, __qtablewidgetitem78)
         self.table_infos_flux_monetaire_3.setObjectName(u"table_infos_flux_monetaire_3")
         self.table_infos_flux_monetaire_3.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1630,20 +1738,20 @@ class Ui_MainWindow(object):
         self.table_infos_flux_monetaire = QTableWidget(self.tab_flux_monetaire)
         if (self.table_infos_flux_monetaire.columnCount() < 7):
             self.table_infos_flux_monetaire.setColumnCount(7)
-        __qtablewidgetitem70 = QTableWidgetItem()
-        self.table_infos_flux_monetaire.setHorizontalHeaderItem(0, __qtablewidgetitem70)
-        __qtablewidgetitem71 = QTableWidgetItem()
-        self.table_infos_flux_monetaire.setHorizontalHeaderItem(1, __qtablewidgetitem71)
-        __qtablewidgetitem72 = QTableWidgetItem()
-        self.table_infos_flux_monetaire.setHorizontalHeaderItem(2, __qtablewidgetitem72)
-        __qtablewidgetitem73 = QTableWidgetItem()
-        self.table_infos_flux_monetaire.setHorizontalHeaderItem(3, __qtablewidgetitem73)
-        __qtablewidgetitem74 = QTableWidgetItem()
-        self.table_infos_flux_monetaire.setHorizontalHeaderItem(4, __qtablewidgetitem74)
-        __qtablewidgetitem75 = QTableWidgetItem()
-        self.table_infos_flux_monetaire.setHorizontalHeaderItem(5, __qtablewidgetitem75)
-        __qtablewidgetitem76 = QTableWidgetItem()
-        self.table_infos_flux_monetaire.setHorizontalHeaderItem(6, __qtablewidgetitem76)
+        __qtablewidgetitem79 = QTableWidgetItem()
+        self.table_infos_flux_monetaire.setHorizontalHeaderItem(0, __qtablewidgetitem79)
+        __qtablewidgetitem80 = QTableWidgetItem()
+        self.table_infos_flux_monetaire.setHorizontalHeaderItem(1, __qtablewidgetitem80)
+        __qtablewidgetitem81 = QTableWidgetItem()
+        self.table_infos_flux_monetaire.setHorizontalHeaderItem(2, __qtablewidgetitem81)
+        __qtablewidgetitem82 = QTableWidgetItem()
+        self.table_infos_flux_monetaire.setHorizontalHeaderItem(3, __qtablewidgetitem82)
+        __qtablewidgetitem83 = QTableWidgetItem()
+        self.table_infos_flux_monetaire.setHorizontalHeaderItem(4, __qtablewidgetitem83)
+        __qtablewidgetitem84 = QTableWidgetItem()
+        self.table_infos_flux_monetaire.setHorizontalHeaderItem(5, __qtablewidgetitem84)
+        __qtablewidgetitem85 = QTableWidgetItem()
+        self.table_infos_flux_monetaire.setHorizontalHeaderItem(6, __qtablewidgetitem85)
         self.table_infos_flux_monetaire.setObjectName(u"table_infos_flux_monetaire")
         self.table_infos_flux_monetaire.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1704,10 +1812,10 @@ class Ui_MainWindow(object):
         self.table_infos_actifs_immo = QTableWidget(self.tab_rapports_financiers)
         if (self.table_infos_actifs_immo.columnCount() < 2):
             self.table_infos_actifs_immo.setColumnCount(2)
-        __qtablewidgetitem77 = QTableWidgetItem()
-        self.table_infos_actifs_immo.setHorizontalHeaderItem(0, __qtablewidgetitem77)
-        __qtablewidgetitem78 = QTableWidgetItem()
-        self.table_infos_actifs_immo.setHorizontalHeaderItem(1, __qtablewidgetitem78)
+        __qtablewidgetitem86 = QTableWidgetItem()
+        self.table_infos_actifs_immo.setHorizontalHeaderItem(0, __qtablewidgetitem86)
+        __qtablewidgetitem87 = QTableWidgetItem()
+        self.table_infos_actifs_immo.setHorizontalHeaderItem(1, __qtablewidgetitem87)
         self.table_infos_actifs_immo.setObjectName(u"table_infos_actifs_immo")
         self.table_infos_actifs_immo.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1727,10 +1835,10 @@ class Ui_MainWindow(object):
         self.table_infos_Capitaux_propres = QTableWidget(self.tab_rapports_financiers)
         if (self.table_infos_Capitaux_propres.columnCount() < 2):
             self.table_infos_Capitaux_propres.setColumnCount(2)
-        __qtablewidgetitem79 = QTableWidgetItem()
-        self.table_infos_Capitaux_propres.setHorizontalHeaderItem(0, __qtablewidgetitem79)
-        __qtablewidgetitem80 = QTableWidgetItem()
-        self.table_infos_Capitaux_propres.setHorizontalHeaderItem(1, __qtablewidgetitem80)
+        __qtablewidgetitem88 = QTableWidgetItem()
+        self.table_infos_Capitaux_propres.setHorizontalHeaderItem(0, __qtablewidgetitem88)
+        __qtablewidgetitem89 = QTableWidgetItem()
+        self.table_infos_Capitaux_propres.setHorizontalHeaderItem(1, __qtablewidgetitem89)
         self.table_infos_Capitaux_propres.setObjectName(u"table_infos_Capitaux_propres")
         self.table_infos_Capitaux_propres.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1764,10 +1872,10 @@ class Ui_MainWindow(object):
         self.table_infos_actifs_circulants = QTableWidget(self.tab_rapports_financiers)
         if (self.table_infos_actifs_circulants.columnCount() < 2):
             self.table_infos_actifs_circulants.setColumnCount(2)
-        __qtablewidgetitem81 = QTableWidgetItem()
-        self.table_infos_actifs_circulants.setHorizontalHeaderItem(0, __qtablewidgetitem81)
-        __qtablewidgetitem82 = QTableWidgetItem()
-        self.table_infos_actifs_circulants.setHorizontalHeaderItem(1, __qtablewidgetitem82)
+        __qtablewidgetitem90 = QTableWidgetItem()
+        self.table_infos_actifs_circulants.setHorizontalHeaderItem(0, __qtablewidgetitem90)
+        __qtablewidgetitem91 = QTableWidgetItem()
+        self.table_infos_actifs_circulants.setHorizontalHeaderItem(1, __qtablewidgetitem91)
         self.table_infos_actifs_circulants.setObjectName(u"table_infos_actifs_circulants")
         self.table_infos_actifs_circulants.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1787,10 +1895,10 @@ class Ui_MainWindow(object):
         self.table_infos_actifs_circulants_2 = QTableWidget(self.tab_rapports_financiers)
         if (self.table_infos_actifs_circulants_2.columnCount() < 2):
             self.table_infos_actifs_circulants_2.setColumnCount(2)
-        __qtablewidgetitem83 = QTableWidgetItem()
-        self.table_infos_actifs_circulants_2.setHorizontalHeaderItem(0, __qtablewidgetitem83)
-        __qtablewidgetitem84 = QTableWidgetItem()
-        self.table_infos_actifs_circulants_2.setHorizontalHeaderItem(1, __qtablewidgetitem84)
+        __qtablewidgetitem92 = QTableWidgetItem()
+        self.table_infos_actifs_circulants_2.setHorizontalHeaderItem(0, __qtablewidgetitem92)
+        __qtablewidgetitem93 = QTableWidgetItem()
+        self.table_infos_actifs_circulants_2.setHorizontalHeaderItem(1, __qtablewidgetitem93)
         self.table_infos_actifs_circulants_2.setObjectName(u"table_infos_actifs_circulants_2")
         self.table_infos_actifs_circulants_2.setStyleSheet(u"QHeaderView::section{\n"
 "	font-weight: bold;\n"
@@ -1827,8 +1935,10 @@ class Ui_MainWindow(object):
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
+        self.pushButton.toggled.connect(self.icon_text_widget.setHidden)
+        self.pushButton.toggled.connect(self.icon_only_widget.setVisible)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1856,7 +1966,7 @@ class Ui_MainWindow(object):
         self.btn_rapports_financiers_3.setText(QCoreApplication.translate("MainWindow", u"Rapports financiers", None))
         self.btn_parametre_2.setText("")
         self.btn_deconnexion_2.setText("")
-        self.label_4.setText("")
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u">", None))
         self.btn_dashboard_1.setText("")
         self.btn_gestion_referentiels_1.setText("")
         self.btn_gestion_produits_1.setText("")
@@ -1869,59 +1979,82 @@ class Ui_MainWindow(object):
         self.label_6.setText("")
         self.label_20.setText(QCoreApplication.translate("MainWindow", u"Tableau de bord", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_dashboard), QCoreApplication.translate("MainWindow", u"Tableau de bord", None))
-        self.cherche_produit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher produit...", None))
-        ___qtablewidgetitem = self.table_infos_client_4.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.table_infos_matiere_premiere.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem1 = self.table_infos_client_4.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.table_infos_matiere_premiere.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Label", None));
-        ___qtablewidgetitem2 = self.table_infos_client_4.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Fournisseur", None));
-        ___qtablewidgetitem3 = self.table_infos_client_4.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Prix de revient", None));
-        ___qtablewidgetitem4 = self.table_infos_client_4.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Prix de vente", None));
-        ___qtablewidgetitem5 = self.table_infos_client_4.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Description", None));
-        ___qtablewidgetitem6 = self.table_infos_client_4.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
+        ___qtablewidgetitem2 = self.table_infos_matiere_premiere.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Unit\u00e9", None));
+        ___qtablewidgetitem3 = self.table_infos_matiere_premiere.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Fournisseur", None));
+        ___qtablewidgetitem4 = self.table_infos_matiere_premiere.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Prix de revient", None));
+        ___qtablewidgetitem5 = self.table_infos_matiere_premiere.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Prix de vente", None));
+        ___qtablewidgetitem6 = self.table_infos_matiere_premiere.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Description", None));
+        ___qtablewidgetitem7 = self.table_infos_matiere_premiere.horizontalHeaderItem(7)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
+        self.cherche_matiere_premiere.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher produit...", None))
+        self.btn_ajout_matiere_premiere.setText(QCoreApplication.translate("MainWindow", u"Ajouter Mati\u00e8re pre.", None))
+        self.btn_export_excel_matiere_premiere.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
+        self.btn_export_pdf_matiere_premiere.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_matieres_premieres), QCoreApplication.translate("MainWindow", u"Mati\u00e8res premi\u00e8res", None))
+        self.cherche_produit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher produit...", None))
+        ___qtablewidgetitem8 = self.table_infos_client_4.horizontalHeaderItem(0)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem9 = self.table_infos_client_4.horizontalHeaderItem(1)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Label", None));
+        ___qtablewidgetitem10 = self.table_infos_client_4.horizontalHeaderItem(2)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Produit compos\u00e9", None));
+        ___qtablewidgetitem11 = self.table_infos_client_4.horizontalHeaderItem(3)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Fournisseur", None));
+        ___qtablewidgetitem12 = self.table_infos_client_4.horizontalHeaderItem(4)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Prix de revient", None));
+        ___qtablewidgetitem13 = self.table_infos_client_4.horizontalHeaderItem(5)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Prix de vente", None));
+        ___qtablewidgetitem14 = self.table_infos_client_4.horizontalHeaderItem(6)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Description", None));
+        ___qtablewidgetitem15 = self.table_infos_client_4.horizontalHeaderItem(7)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
         self.btn_ajout_produit.setText(QCoreApplication.translate("MainWindow", u"Ajouter Produit", None))
         self.btn_export_excel_produit.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.btn_export_pdf_produit.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_produits), QCoreApplication.translate("MainWindow", u"Produits", None))
         self.cherche_fournisseur.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
-        ___qtablewidgetitem7 = self.table_infos_fournisseur.horizontalHeaderItem(0)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem8 = self.table_infos_fournisseur.horizontalHeaderItem(1)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Nom", None));
-        ___qtablewidgetitem9 = self.table_infos_fournisseur.horizontalHeaderItem(2)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"prenom", None));
-        ___qtablewidgetitem10 = self.table_infos_fournisseur.horizontalHeaderItem(3)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Entreprise", None));
-        ___qtablewidgetitem11 = self.table_infos_fournisseur.horizontalHeaderItem(4)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Adresse", None));
-        ___qtablewidgetitem12 = self.table_infos_fournisseur.horizontalHeaderItem(5)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"T\u00e9l\u00e9phone", None));
-        ___qtablewidgetitem13 = self.table_infos_fournisseur.horizontalHeaderItem(6)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Email", None));
-        ___qtablewidgetitem14 = self.table_infos_fournisseur.horizontalHeaderItem(7)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
+        ___qtablewidgetitem16 = self.table_infos_fournisseur.horizontalHeaderItem(0)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem17 = self.table_infos_fournisseur.horizontalHeaderItem(1)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Nom", None));
+        ___qtablewidgetitem18 = self.table_infos_fournisseur.horizontalHeaderItem(2)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"prenom", None));
+        ___qtablewidgetitem19 = self.table_infos_fournisseur.horizontalHeaderItem(3)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Entreprise", None));
+        ___qtablewidgetitem20 = self.table_infos_fournisseur.horizontalHeaderItem(4)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Adresse", None));
+        ___qtablewidgetitem21 = self.table_infos_fournisseur.horizontalHeaderItem(5)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"T\u00e9l\u00e9phone", None));
+        ___qtablewidgetitem22 = self.table_infos_fournisseur.horizontalHeaderItem(6)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Email", None));
+        ___qtablewidgetitem23 = self.table_infos_fournisseur.horizontalHeaderItem(7)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
         self.btn_ajout_fournisseur.setText(QCoreApplication.translate("MainWindow", u"Ajouter fournisseur", None))
         self.export_excel_btn_fournisseur.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.export_pdf_btn_fournisseur.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_fournisseurs), QCoreApplication.translate("MainWindow", u"Fournisseur", None))
         self.cherche_entrepot.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
-        ___qtablewidgetitem15 = self.table_infos_entrepot.horizontalHeaderItem(0)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem16 = self.table_infos_entrepot.horizontalHeaderItem(1)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Code", None));
-        ___qtablewidgetitem17 = self.table_infos_entrepot.horizontalHeaderItem(2)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Adresse", None));
-        ___qtablewidgetitem18 = self.table_infos_entrepot.horizontalHeaderItem(3)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"T\u00e9l\u00e9phone", None));
-        ___qtablewidgetitem19 = self.table_infos_entrepot.horizontalHeaderItem(4)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
-        ___qtablewidgetitem20 = self.table_infos_entrepot.horizontalHeaderItem(5)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
+        ___qtablewidgetitem24 = self.table_infos_entrepot.horizontalHeaderItem(0)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem25 = self.table_infos_entrepot.horizontalHeaderItem(1)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Code", None));
+        ___qtablewidgetitem26 = self.table_infos_entrepot.horizontalHeaderItem(2)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Adresse", None));
+        ___qtablewidgetitem27 = self.table_infos_entrepot.horizontalHeaderItem(3)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"T\u00e9l\u00e9phone", None));
+        ___qtablewidgetitem28 = self.table_infos_entrepot.horizontalHeaderItem(4)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
+        ___qtablewidgetitem29 = self.table_infos_entrepot.horizontalHeaderItem(5)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
         self.btn_ajout_entrepot.setText(QCoreApplication.translate("MainWindow", u"Ajouter entrepot", None))
         self.export_excel_entrepot.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.export_pdf_entrepot.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
@@ -1929,164 +2062,164 @@ class Ui_MainWindow(object):
         self.btn_ajout_client.setText(QCoreApplication.translate("MainWindow", u"Ajouter client", None))
         self.export_excel_btn_2.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.export_pdf_btn_2.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
-        ___qtablewidgetitem21 = self.table_infos_client_2.horizontalHeaderItem(0)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"ID Client", None));
-        ___qtablewidgetitem22 = self.table_infos_client_2.horizontalHeaderItem(1)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Pr\u00e9nom", None));
-        ___qtablewidgetitem23 = self.table_infos_client_2.horizontalHeaderItem(2)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Nom", None));
-        ___qtablewidgetitem24 = self.table_infos_client_2.horizontalHeaderItem(3)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Genre", None));
-        ___qtablewidgetitem25 = self.table_infos_client_2.horizontalHeaderItem(4)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Entreprise", None));
-        ___qtablewidgetitem26 = self.table_infos_client_2.horizontalHeaderItem(5)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Adresse", None));
-        ___qtablewidgetitem27 = self.table_infos_client_2.horizontalHeaderItem(6)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"T\u00e9l\u00e9phone", None));
-        ___qtablewidgetitem28 = self.table_infos_client_2.horizontalHeaderItem(7)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Email", None));
-        ___qtablewidgetitem29 = self.table_infos_client_2.horizontalHeaderItem(8)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
+        ___qtablewidgetitem30 = self.table_infos_client_2.horizontalHeaderItem(0)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"ID Client", None));
+        ___qtablewidgetitem31 = self.table_infos_client_2.horizontalHeaderItem(1)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Pr\u00e9nom", None));
+        ___qtablewidgetitem32 = self.table_infos_client_2.horizontalHeaderItem(2)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Nom", None));
+        ___qtablewidgetitem33 = self.table_infos_client_2.horizontalHeaderItem(3)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"Genre", None));
+        ___qtablewidgetitem34 = self.table_infos_client_2.horizontalHeaderItem(4)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"Entreprise", None));
+        ___qtablewidgetitem35 = self.table_infos_client_2.horizontalHeaderItem(5)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"Adresse", None));
+        ___qtablewidgetitem36 = self.table_infos_client_2.horizontalHeaderItem(6)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"T\u00e9l\u00e9phone", None));
+        ___qtablewidgetitem37 = self.table_infos_client_2.horizontalHeaderItem(7)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"Email", None));
+        ___qtablewidgetitem38 = self.table_infos_client_2.horizontalHeaderItem(8)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"Actions", None));
         self.cherche_client_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_client), QCoreApplication.translate("MainWindow", u"Clients", None))
-        ___qtablewidgetitem30 = self.table_infos_inventaire.horizontalHeaderItem(0)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"ID Inventaire", None));
-        ___qtablewidgetitem31 = self.table_infos_inventaire.horizontalHeaderItem(1)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Date inventaire", None));
-        ___qtablewidgetitem32 = self.table_infos_inventaire.horizontalHeaderItem(2)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Code produit", None));
-        ___qtablewidgetitem33 = self.table_infos_inventaire.horizontalHeaderItem(3)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"Label", None));
-        ___qtablewidgetitem34 = self.table_infos_inventaire.horizontalHeaderItem(4)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"Quantit\u00e9 th\u00e9orique", None));
-        ___qtablewidgetitem35 = self.table_infos_inventaire.horizontalHeaderItem(5)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"Quantit\u00e9 r\u00e9elle", None));
-        ___qtablewidgetitem36 = self.table_infos_inventaire.horizontalHeaderItem(6)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"Ecart", None));
-        ___qtablewidgetitem37 = self.table_infos_inventaire.horizontalHeaderItem(7)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"Unit\u00e9", None));
-        ___qtablewidgetitem38 = self.table_infos_inventaire.horizontalHeaderItem(8)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"Agent", None));
+        ___qtablewidgetitem39 = self.table_infos_inventaire.horizontalHeaderItem(0)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"ID Inventaire", None));
+        ___qtablewidgetitem40 = self.table_infos_inventaire.horizontalHeaderItem(1)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"Date inventaire", None));
+        ___qtablewidgetitem41 = self.table_infos_inventaire.horizontalHeaderItem(2)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"Code produit", None));
+        ___qtablewidgetitem42 = self.table_infos_inventaire.horizontalHeaderItem(3)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"Label", None));
+        ___qtablewidgetitem43 = self.table_infos_inventaire.horizontalHeaderItem(4)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"Quantit\u00e9 th\u00e9orique", None));
+        ___qtablewidgetitem44 = self.table_infos_inventaire.horizontalHeaderItem(5)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"Quantit\u00e9 r\u00e9elle", None));
+        ___qtablewidgetitem45 = self.table_infos_inventaire.horizontalHeaderItem(6)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"Ecart", None));
+        ___qtablewidgetitem46 = self.table_infos_inventaire.horizontalHeaderItem(7)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Unit\u00e9", None));
+        ___qtablewidgetitem47 = self.table_infos_inventaire.horizontalHeaderItem(8)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Agent", None));
         self.btn_ajout_inventaire.setText(QCoreApplication.translate("MainWindow", u"D\u00e9buter", None))
         self.export_excel_btn_inventaire.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.export_pdf_btn_inventaire.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
         self.cherche_inventaire.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_inventaires), QCoreApplication.translate("MainWindow", u"Inventaire", None))
         self.cherche_vente_retour.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
-        ___qtablewidgetitem39 = self.table_infos_ventes_retours.horizontalHeaderItem(0)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"ID Vente", None));
-        ___qtablewidgetitem40 = self.table_infos_ventes_retours.horizontalHeaderItem(1)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"Date de vente", None));
-        ___qtablewidgetitem41 = self.table_infos_ventes_retours.horizontalHeaderItem(2)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"Client", None));
-        ___qtablewidgetitem42 = self.table_infos_ventes_retours.horizontalHeaderItem(3)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"Nombre d'articles", None));
-        ___qtablewidgetitem43 = self.table_infos_ventes_retours.horizontalHeaderItem(4)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"Prix total", None));
-        ___qtablewidgetitem44 = self.table_infos_ventes_retours.horizontalHeaderItem(5)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"Montant r\u00e9gl\u00e9", None));
-        ___qtablewidgetitem45 = self.table_infos_ventes_retours.horizontalHeaderItem(6)
-        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"Montant restant", None));
-        ___qtablewidgetitem46 = self.table_infos_ventes_retours.horizontalHeaderItem(7)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Utilisateur", None));
+        ___qtablewidgetitem48 = self.table_infos_ventes_retours.horizontalHeaderItem(0)
+        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"ID Vente", None));
+        ___qtablewidgetitem49 = self.table_infos_ventes_retours.horizontalHeaderItem(1)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"Date de vente", None));
+        ___qtablewidgetitem50 = self.table_infos_ventes_retours.horizontalHeaderItem(2)
+        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"Client", None));
+        ___qtablewidgetitem51 = self.table_infos_ventes_retours.horizontalHeaderItem(3)
+        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"Nombre d'articles", None));
+        ___qtablewidgetitem52 = self.table_infos_ventes_retours.horizontalHeaderItem(4)
+        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"Prix total", None));
+        ___qtablewidgetitem53 = self.table_infos_ventes_retours.horizontalHeaderItem(5)
+        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"Montant r\u00e9gl\u00e9", None));
+        ___qtablewidgetitem54 = self.table_infos_ventes_retours.horizontalHeaderItem(6)
+        ___qtablewidgetitem54.setText(QCoreApplication.translate("MainWindow", u"Montant restant", None));
+        ___qtablewidgetitem55 = self.table_infos_ventes_retours.horizontalHeaderItem(7)
+        ___qtablewidgetitem55.setText(QCoreApplication.translate("MainWindow", u"Utilisateur", None));
         self.btn_ajout_inventaire_2.setText(QCoreApplication.translate("MainWindow", u"Vendre/Retourner", None))
         self.export_excel_btn_vente_retour.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.export_pdf_btn_vente_retour.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_vente_retour), QCoreApplication.translate("MainWindow", u"Ventes & Retours", None))
-        ___qtablewidgetitem47 = self.table_infos_mvt_stock.horizontalHeaderItem(0)
-        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"ID mouvement", None));
-        ___qtablewidgetitem48 = self.table_infos_mvt_stock.horizontalHeaderItem(1)
-        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"Code produit", None));
-        ___qtablewidgetitem49 = self.table_infos_mvt_stock.horizontalHeaderItem(2)
-        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"Label", None));
-        ___qtablewidgetitem50 = self.table_infos_mvt_stock.horizontalHeaderItem(3)
-        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"Type", None));
-        ___qtablewidgetitem51 = self.table_infos_mvt_stock.horizontalHeaderItem(4)
-        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"Quantit\u00e9 disponible", None));
-        ___qtablewidgetitem52 = self.table_infos_mvt_stock.horizontalHeaderItem(5)
-        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"Unit\u00e9", None));
-        ___qtablewidgetitem53 = self.table_infos_mvt_stock.horizontalHeaderItem(6)
-        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"Utilisateur", None));
-        ___qtablewidgetitem54 = self.table_infos_mvt_stock.horizontalHeaderItem(7)
-        ___qtablewidgetitem54.setText(QCoreApplication.translate("MainWindow", u"Date", None));
+        ___qtablewidgetitem56 = self.table_infos_mvt_stock.horizontalHeaderItem(0)
+        ___qtablewidgetitem56.setText(QCoreApplication.translate("MainWindow", u"ID mouvement", None));
+        ___qtablewidgetitem57 = self.table_infos_mvt_stock.horizontalHeaderItem(1)
+        ___qtablewidgetitem57.setText(QCoreApplication.translate("MainWindow", u"Code produit", None));
+        ___qtablewidgetitem58 = self.table_infos_mvt_stock.horizontalHeaderItem(2)
+        ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"Label", None));
+        ___qtablewidgetitem59 = self.table_infos_mvt_stock.horizontalHeaderItem(3)
+        ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem60 = self.table_infos_mvt_stock.horizontalHeaderItem(4)
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Quantit\u00e9 disponible", None));
+        ___qtablewidgetitem61 = self.table_infos_mvt_stock.horizontalHeaderItem(5)
+        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Unit\u00e9", None));
+        ___qtablewidgetitem62 = self.table_infos_mvt_stock.horizontalHeaderItem(6)
+        ___qtablewidgetitem62.setText(QCoreApplication.translate("MainWindow", u"Utilisateur", None));
+        ___qtablewidgetitem63 = self.table_infos_mvt_stock.horizontalHeaderItem(7)
+        ___qtablewidgetitem63.setText(QCoreApplication.translate("MainWindow", u"Date", None));
         self.cherche_mvt_stock.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
         self.export_excel_btn_mvt_stock.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.export_pdf_btn_mvt_stock.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_mvt_stock), QCoreApplication.translate("MainWindow", u"Mvts Stocks", None))
         self.cherche_livraison.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
-        ___qtablewidgetitem55 = self.table_infos_livraison.horizontalHeaderItem(0)
-        ___qtablewidgetitem55.setText(QCoreApplication.translate("MainWindow", u"Date de livraison", None));
-        ___qtablewidgetitem56 = self.table_infos_livraison.horizontalHeaderItem(1)
-        ___qtablewidgetitem56.setText(QCoreApplication.translate("MainWindow", u"Date de vente", None));
-        ___qtablewidgetitem57 = self.table_infos_livraison.horizontalHeaderItem(2)
-        ___qtablewidgetitem57.setText(QCoreApplication.translate("MainWindow", u"Client", None));
-        ___qtablewidgetitem58 = self.table_infos_livraison.horizontalHeaderItem(3)
-        ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"Nombre d'articles", None));
-        ___qtablewidgetitem59 = self.table_infos_livraison.horizontalHeaderItem(4)
-        ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Prix total", None));
-        ___qtablewidgetitem60 = self.table_infos_livraison.horizontalHeaderItem(5)
-        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Montant r\u00e9gl\u00e9", None));
-        ___qtablewidgetitem61 = self.table_infos_livraison.horizontalHeaderItem(6)
-        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Montant restant", None));
-        ___qtablewidgetitem62 = self.table_infos_livraison.horizontalHeaderItem(7)
-        ___qtablewidgetitem62.setText(QCoreApplication.translate("MainWindow", u"Livreur", None));
-        ___qtablewidgetitem63 = self.table_infos_livraison.horizontalHeaderItem(8)
-        ___qtablewidgetitem63.setText(QCoreApplication.translate("MainWindow", u"Statut", None));
-        ___qtablewidgetitem64 = self.table_infos_livraison.horizontalHeaderItem(9)
-        ___qtablewidgetitem64.setText(QCoreApplication.translate("MainWindow", u"Utilisateur", None));
+        ___qtablewidgetitem64 = self.table_infos_livraison.horizontalHeaderItem(0)
+        ___qtablewidgetitem64.setText(QCoreApplication.translate("MainWindow", u"Date de livraison", None));
+        ___qtablewidgetitem65 = self.table_infos_livraison.horizontalHeaderItem(1)
+        ___qtablewidgetitem65.setText(QCoreApplication.translate("MainWindow", u"Date de vente", None));
+        ___qtablewidgetitem66 = self.table_infos_livraison.horizontalHeaderItem(2)
+        ___qtablewidgetitem66.setText(QCoreApplication.translate("MainWindow", u"Client", None));
+        ___qtablewidgetitem67 = self.table_infos_livraison.horizontalHeaderItem(3)
+        ___qtablewidgetitem67.setText(QCoreApplication.translate("MainWindow", u"Nombre d'articles", None));
+        ___qtablewidgetitem68 = self.table_infos_livraison.horizontalHeaderItem(4)
+        ___qtablewidgetitem68.setText(QCoreApplication.translate("MainWindow", u"Prix total", None));
+        ___qtablewidgetitem69 = self.table_infos_livraison.horizontalHeaderItem(5)
+        ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"Montant r\u00e9gl\u00e9", None));
+        ___qtablewidgetitem70 = self.table_infos_livraison.horizontalHeaderItem(6)
+        ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"Montant restant", None));
+        ___qtablewidgetitem71 = self.table_infos_livraison.horizontalHeaderItem(7)
+        ___qtablewidgetitem71.setText(QCoreApplication.translate("MainWindow", u"Livreur", None));
+        ___qtablewidgetitem72 = self.table_infos_livraison.horizontalHeaderItem(8)
+        ___qtablewidgetitem72.setText(QCoreApplication.translate("MainWindow", u"Statut", None));
+        ___qtablewidgetitem73 = self.table_infos_livraison.horizontalHeaderItem(9)
+        ___qtablewidgetitem73.setText(QCoreApplication.translate("MainWindow", u"Utilisateur", None));
         self.btn_ajout_livraison.setText(QCoreApplication.translate("MainWindow", u"Vendre/Retourner", None))
         self.export_excel_btn_livraison.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.export_pdf_btn_livraison.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_livraison), QCoreApplication.translate("MainWindow", u"Livraisons", None))
-        ___qtablewidgetitem65 = self.table_infos_flux_monetaire_cate.horizontalHeaderItem(0)
-        ___qtablewidgetitem65.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
-        ___qtablewidgetitem66 = self.table_infos_flux_monetaire_cate.horizontalHeaderItem(1)
-        ___qtablewidgetitem66.setText(QCoreApplication.translate("MainWindow", u"Type", None));
-        ___qtablewidgetitem67 = self.table_infos_flux_monetaire_cate.horizontalHeaderItem(2)
-        ___qtablewidgetitem67.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
+        ___qtablewidgetitem74 = self.table_infos_flux_monetaire_cate.horizontalHeaderItem(0)
+        ___qtablewidgetitem74.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
+        ___qtablewidgetitem75 = self.table_infos_flux_monetaire_cate.horizontalHeaderItem(1)
+        ___qtablewidgetitem75.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem76 = self.table_infos_flux_monetaire_cate.horizontalHeaderItem(2)
+        ___qtablewidgetitem76.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
         self.export_excel_btn_flux_monetaire.setText(QCoreApplication.translate("MainWindow", u"Export Excel", None))
         self.btn_ajout_inventaire_3.setText(QCoreApplication.translate("MainWindow", u"Ajouter un flux", None))
         self.export_pdf_btn_flux_monetaire.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
-        ___qtablewidgetitem68 = self.table_infos_flux_monetaire_3.horizontalHeaderItem(0)
-        ___qtablewidgetitem68.setText(QCoreApplication.translate("MainWindow", u"Type", None));
-        ___qtablewidgetitem69 = self.table_infos_flux_monetaire_3.horizontalHeaderItem(1)
-        ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
-        ___qtablewidgetitem70 = self.table_infos_flux_monetaire.horizontalHeaderItem(0)
-        ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"ID mouvement", None));
-        ___qtablewidgetitem71 = self.table_infos_flux_monetaire.horizontalHeaderItem(1)
-        ___qtablewidgetitem71.setText(QCoreApplication.translate("MainWindow", u"Date", None));
-        ___qtablewidgetitem72 = self.table_infos_flux_monetaire.horizontalHeaderItem(2)
-        ___qtablewidgetitem72.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
-        ___qtablewidgetitem73 = self.table_infos_flux_monetaire.horizontalHeaderItem(3)
-        ___qtablewidgetitem73.setText(QCoreApplication.translate("MainWindow", u"Type", None));
-        ___qtablewidgetitem74 = self.table_infos_flux_monetaire.horizontalHeaderItem(4)
-        ___qtablewidgetitem74.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
-        ___qtablewidgetitem75 = self.table_infos_flux_monetaire.horizontalHeaderItem(5)
-        ___qtablewidgetitem75.setText(QCoreApplication.translate("MainWindow", u"Description", None));
-        ___qtablewidgetitem76 = self.table_infos_flux_monetaire.horizontalHeaderItem(6)
-        ___qtablewidgetitem76.setText(QCoreApplication.translate("MainWindow", u"Utilisateur", None));
+        ___qtablewidgetitem77 = self.table_infos_flux_monetaire_3.horizontalHeaderItem(0)
+        ___qtablewidgetitem77.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem78 = self.table_infos_flux_monetaire_3.horizontalHeaderItem(1)
+        ___qtablewidgetitem78.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
+        ___qtablewidgetitem79 = self.table_infos_flux_monetaire.horizontalHeaderItem(0)
+        ___qtablewidgetitem79.setText(QCoreApplication.translate("MainWindow", u"ID mouvement", None));
+        ___qtablewidgetitem80 = self.table_infos_flux_monetaire.horizontalHeaderItem(1)
+        ___qtablewidgetitem80.setText(QCoreApplication.translate("MainWindow", u"Date", None));
+        ___qtablewidgetitem81 = self.table_infos_flux_monetaire.horizontalHeaderItem(2)
+        ___qtablewidgetitem81.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
+        ___qtablewidgetitem82 = self.table_infos_flux_monetaire.horizontalHeaderItem(3)
+        ___qtablewidgetitem82.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem83 = self.table_infos_flux_monetaire.horizontalHeaderItem(4)
+        ___qtablewidgetitem83.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
+        ___qtablewidgetitem84 = self.table_infos_flux_monetaire.horizontalHeaderItem(5)
+        ___qtablewidgetitem84.setText(QCoreApplication.translate("MainWindow", u"Description", None));
+        ___qtablewidgetitem85 = self.table_infos_flux_monetaire.horizontalHeaderItem(6)
+        ___qtablewidgetitem85.setText(QCoreApplication.translate("MainWindow", u"Utilisateur", None));
         self.cherche_flux_monetaire.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chercher client...", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_flux_monetaire), QCoreApplication.translate("MainWindow", u"Flux Mon\u00e9taires", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Actifs Immobilis\u00e9s", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Capitaux propres", None))
-        ___qtablewidgetitem77 = self.table_infos_actifs_immo.horizontalHeaderItem(0)
-        ___qtablewidgetitem77.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
-        ___qtablewidgetitem78 = self.table_infos_actifs_immo.horizontalHeaderItem(1)
-        ___qtablewidgetitem78.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
-        ___qtablewidgetitem79 = self.table_infos_Capitaux_propres.horizontalHeaderItem(0)
-        ___qtablewidgetitem79.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
-        ___qtablewidgetitem80 = self.table_infos_Capitaux_propres.horizontalHeaderItem(1)
-        ___qtablewidgetitem80.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
+        ___qtablewidgetitem86 = self.table_infos_actifs_immo.horizontalHeaderItem(0)
+        ___qtablewidgetitem86.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
+        ___qtablewidgetitem87 = self.table_infos_actifs_immo.horizontalHeaderItem(1)
+        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
+        ___qtablewidgetitem88 = self.table_infos_Capitaux_propres.horizontalHeaderItem(0)
+        ___qtablewidgetitem88.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
+        ___qtablewidgetitem89 = self.table_infos_Capitaux_propres.horizontalHeaderItem(1)
+        ___qtablewidgetitem89.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Actifs Circulant", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Dettes", None))
-        ___qtablewidgetitem81 = self.table_infos_actifs_circulants.horizontalHeaderItem(0)
-        ___qtablewidgetitem81.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
-        ___qtablewidgetitem82 = self.table_infos_actifs_circulants.horizontalHeaderItem(1)
-        ___qtablewidgetitem82.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
-        ___qtablewidgetitem83 = self.table_infos_actifs_circulants_2.horizontalHeaderItem(0)
-        ___qtablewidgetitem83.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
-        ___qtablewidgetitem84 = self.table_infos_actifs_circulants_2.horizontalHeaderItem(1)
-        ___qtablewidgetitem84.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
+        ___qtablewidgetitem90 = self.table_infos_actifs_circulants.horizontalHeaderItem(0)
+        ___qtablewidgetitem90.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
+        ___qtablewidgetitem91 = self.table_infos_actifs_circulants.horizontalHeaderItem(1)
+        ___qtablewidgetitem91.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
+        ___qtablewidgetitem92 = self.table_infos_actifs_circulants_2.horizontalHeaderItem(0)
+        ___qtablewidgetitem92.setText(QCoreApplication.translate("MainWindow", u"Cat\u00e9gorie", None));
+        ___qtablewidgetitem93 = self.table_infos_actifs_circulants_2.horizontalHeaderItem(1)
+        ___qtablewidgetitem93.setText(QCoreApplication.translate("MainWindow", u"Montant", None));
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_rapports_financiers), QCoreApplication.translate("MainWindow", u"Rapports Financiers", None))
     # retranslateUi
 

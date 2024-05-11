@@ -33,6 +33,7 @@ class FrontPage(QMainWindow, Ui_MainWindow):
         self.btn_dashboard_1.clicked.connect(self.switch_to_dashboard_tab)
         self.btn_dashboard_4.clicked.connect(self.switch_to_dashboard_tab)
 
+        self.btn_ref_matires_premieres_3.clicked.connect(self.switch_to_referentiel_matieres_premieres_tab)
         self.btn_ref_produits_3.clicked.connect(self.switch_to_referentiel_produits_tab)
         self.btn_ref_fournisseurs_3.clicked.connect(self.switch_to_referentiel_fournisseurs_tab)
         self.btn_ref_entrepots_3.clicked.connect(self.switch_to_referentiel_entrepots_tab)
@@ -114,6 +115,12 @@ class FrontPage(QMainWindow, Ui_MainWindow):
 #         self.stackedWidget.setCurrentIndex(9)
 
         # Référentiel Produits
+
+    def switch_to_referentiel_matieres_premieres_tab(self):
+
+        self.tabWidget.insertTab(-1, self.tab_matieres_premieres, 'Matières premières')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb-1)
     def switch_to_referentiel_produits_tab(self):
 
         self.tabWidget.insertTab(-1, self.tab_produits, 'Produits')
@@ -196,7 +203,7 @@ class FrontPage(QMainWindow, Ui_MainWindow):
 
 #     # Methods to show context menus
     def gestion_referentiels_context_menu(self):
-        self.show_custom_context_menu(self.btn_gestion_referentiels_1, ["Produits", "Fournisseurs", "Entrepôts", "Clients"])
+        self.show_custom_context_menu(self.btn_gestion_referentiels_1, ["Matières premières", "Produits", "Fournisseurs", "Entrepôts", "Clients"])
     
     # Methods to show context menus
     def gestion_produit_context_menu(self):
@@ -239,6 +246,8 @@ QMenu:selected{
         text = self.sender().text()
         if text == "Produits":
             self.switch_to_referentiel_produits_tab()
+        elif text == "Matières premières":
+            self.switch_to_referentiel_matieres_premieres_tab()
         elif text == "Fournisseurs":
             self.switch_to_referentiel_fournisseurs_tab()
         elif text == "Entrepôts":
