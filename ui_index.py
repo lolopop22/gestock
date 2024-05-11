@@ -110,7 +110,6 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton:checked{\n"
 "	border-radius:3px;\n"
-"	background-color: white\n"
 "}")
         icon = QIcon()
         icon.addFile(u"icones/small_dashboard1.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -685,7 +684,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setDocumentMode(False)
         self.tabWidget.setTabsClosable(True)
         self.tabWidget.setMovable(True)
-        self.tabWidget.setTabBarAutoHide(True)
+        self.tabWidget.setTabBarAutoHide(False)
         self.tab_dashboard = QWidget()
         self.tab_dashboard.setObjectName(u"tab_dashboard")
         self.label_20 = QLabel(self.tab_dashboard)
@@ -1829,7 +1828,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(4)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

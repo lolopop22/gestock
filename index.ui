@@ -159,7 +159,6 @@ QPushButton{
 
 QPushButton:checked{
 	border-radius:3px;
-	background-color: white
 }</string>
                </property>
                <property name="text">
@@ -1313,7 +1312,7 @@ QPushButton:checked{
                 <enum>QTabWidget::TabPosition::North</enum>
                </property>
                <property name="currentIndex">
-                <number>4</number>
+                <number>0</number>
                </property>
                <property name="iconSize">
                 <size>
@@ -1337,7 +1336,7 @@ QPushButton:checked{
                 <bool>true</bool>
                </property>
                <property name="tabBarAutoHide">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <widget class="QWidget" name="tab_dashboard">
                 <attribute name="title">
