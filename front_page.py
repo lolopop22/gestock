@@ -22,35 +22,35 @@ class FrontPage(QMainWindow, Ui_MainWindow):
         self.icon_only_widget.setHidden(True)
 
         # Hide Dropdowns
-        self.dropdown_gestion_referentiels.setHidden(True)
-        self.dropdown_gestion_produits.setHidden(True)
-        self.dropdown_gestion_operations.setHidden(True)
-        self.dropdown_gestion_compta.setHidden(True)
+        self.dropdown_gestion_referentiels_3.setHidden(True)
+        self.dropdown_gestion_produits_3.setHidden(True)
+        self.dropdown_gestion_operations_3.setHidden(True)
+        self.dropdown_gestion_compta_3.setHidden(True)
 
         self.tabWidget.setCurrentIndex(0)
 
         # Connect Buttons to switch to different pages
         self.btn_dashboard_1.clicked.connect(self.switch_to_dashboard_tab)
-        self.btn_dashboard_2.clicked.connect(self.switch_to_dashboard_tab)
+        self.btn_dashboard_4.clicked.connect(self.switch_to_dashboard_tab)
 
-        self.btn_ref_produits.clicked.connect(self.switch_to_referentiel_produits_tab)
-        self.btn_ref_fournisseurs.clicked.connect(self.switch_to_referentiel_fournisseurs_tab)
-        self.btn_ref_entrepots.clicked.connect(self.switch_to_referentiel_entrepots_tab)
-        self.btn_ref_clients.clicked.connect(self.switch_to_referentiel_clients_tab)
+        self.btn_ref_produits_3.clicked.connect(self.switch_to_referentiel_produits_tab)
+        self.btn_ref_fournisseurs_3.clicked.connect(self.switch_to_referentiel_fournisseurs_tab)
+        self.btn_ref_entrepots_3.clicked.connect(self.switch_to_referentiel_entrepots_tab)
+        self.btn_ref_clients_3.clicked.connect(self.switch_to_referentiel_clients_tab)
         
-        self.btn_inventaire.clicked.connect(self.switch_to_inventaire_tab)
-        self.btn_mvts_des_stocks.clicked.connect(self.switch_to_mvt_des_stocks_tab)
+        self.btn_inventaire_3.clicked.connect(self.switch_to_inventaire_tab)
+        self.btn_mvts_des_stocks_3.clicked.connect(self.switch_to_mvt_des_stocks_tab)
         
-        self.btn_inventaire.clicked.connect(self.switch_to_inventaire_tab)
-        self.btn_mvts_des_stocks.clicked.connect(self.switch_to_mvt_des_stocks_tab)
+        self.btn_inventaire_3.clicked.connect(self.switch_to_inventaire_tab)
+        self.btn_mvts_des_stocks_3.clicked.connect(self.switch_to_mvt_des_stocks_tab)
         
-        self.btn_ventes_retours.clicked.connect(self.switch_to_ventes_et_retours_tab)
-        self.btn_paiements_factures.clicked.connect(self.switch_to_paiements_et_factures_tab)
-        self.btn_livraisons.clicked.connect(self.switch_to_livraisons_tab)
+        self.btn_ventes_retours_3.clicked.connect(self.switch_to_ventes_et_retours_tab)
+        #self.btn_paiements_factures.clicked.connect(self.switch_to_paiements_et_factures_tab)
+        self.btn_livraisons_3.clicked.connect(self.switch_to_livraisons_tab)
 
-        self.btn_depenses.clicked.connect(self.switch_to_depenses_tab)
-        self.btn_flux_monetaires.clicked.connect(self.switch_to_flux_monetaires_tab)
-        self.btn_rapports_financiers.clicked.connect(self.switch_to_rapports_financiers_tab)
+        #self.btn_rapports_financiers_3.clicked.connect(self.switch_to_depenses_tab)
+        self.btn_flux_monetaires_3.clicked.connect(self.switch_to_flux_monetaires_tab)
+        self.btn_rapports_financiers_3.clicked.connect(self.switch_to_rapports_financiers_tab)
         
 #         self.parametre_1.clicked.connect(self.switch_to_parametres_page)
 #         self.parametre_2.clicked.connect(self.switch_to_parametres_page)
@@ -61,63 +61,120 @@ class FrontPage(QMainWindow, Ui_MainWindow):
         self.btn_gestion_operations_1.clicked.connect(self.gestion_operations_context_menu)
         self.btn_gestion_compta_1.clicked.connect(self.gestion_comptabilite_context_menu)
 
+        # Connect Buttons to respective context menus
+        self.btn_gestion_referentiels_4.clicked.connect(self.open_dropdown_referential)
+        self.btn_gestion_produits_4.clicked.connect(self.open_dropdown_stock)
+        self.btn_gestion_operations_4.clicked.connect(self.open_dropdown_operations)
+        self.btn_gestion_compta_4.clicked.connect(self.open_dropdown_compta)
+
         self.btn_ajout_produit.clicked.connect(self.open_produit_dialog)
-        self.ajout_client_btn_2.clicked.connect(self.open_client_dialog)
+        self.btn_ajout_client.clicked.connect(self.open_client_dialog)
         self.refresh_table_client()
+        self.tabWidget.tabCloseRequested.connect(self.closeTab)
 
-#         # Connect to mysql server and create database if it doesn't exist
-#         # self.create_connection()
 
-#         # Create clients table
-#         # self.create_clients_table()
 
-#         # Open add client dialog
-#         self.ajout_client_btn.clicked.connect(self.open_add_client_student_dialog)
+    def open_dropdown_referential(self):
+        if self.dropdown_gestion_referentiels_3.isHidden():
+            self.dropdown_gestion_referentiels_3.setHidden(False)
+        else:
+            self.dropdown_gestion_referentiels_3.setHidden(True)
 
-    # Methods to switch to different tabs
 
+    def open_dropdown_stock(self):
+
+
+        if self.dropdown_gestion_produits_3.isHidden():
+            self.dropdown_gestion_produits_3.setHidden(False)
+        else:
+            self.dropdown_gestion_produits_3.setHidden(True)
+
+    def open_dropdown_operations(self):
+
+        self.dropdown_gestion_compta_3.setHidden(True)
+        if self.dropdown_gestion_operations_3.isHidden():
+            self.dropdown_gestion_operations_3.setHidden(False)
+        else:
+            self.dropdown_gestion_operations_3.setHidden(True)
+
+    def open_dropdown_compta(self):
+
+        if self.dropdown_gestion_compta_3.isHidden():
+            self.dropdown_gestion_compta_3.setHidden(False)
+        else:
+            self.dropdown_gestion_compta_3.setHidden(True)
 
     def switch_to_dashboard_tab(self):
-        self.tabWidget.setCurrentIndex(0)
+
+        self.tabWidget.insertTab(-1, self.tab_dashboard, 'Dashboard')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
     
 #     def switch_to_parametres_page(self):
 #         self.stackedWidget.setCurrentIndex(9)
 
         # Référentiel Produits
     def switch_to_referentiel_produits_tab(self):
-        self.tabWidget.setCurrentIndex(1)
+
+        self.tabWidget.insertTab(-1, self.tab_produits, 'Produits')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb-1)
 
         # Référentiel Fournisseurs
     def switch_to_referentiel_fournisseurs_tab(self):
-        self.tabWidget.setCurrentIndex(2)
+        #self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.insertTab(-1, self.tab_fournisseurs, 'Fournisseurs')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Référentiel Entrepôts
     def switch_to_referentiel_entrepots_tab(self):
-        self.tabWidget.setCurrentIndex(3)
+        # self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.insertTab(-1, self.tab_entrepots, 'Entrepôts')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Référentiel Clients
     def switch_to_referentiel_clients_tab(self):
-        self.tabWidget.setCurrentIndex(4)
+        # self.tabWidget.setCurrentIndex(4)
+        self.tabWidget.insertTab(-1, self.tab_client, 'Clients')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Gestion Produits - Inventaire
     def switch_to_inventaire_tab(self):
-        self.tabWidget.setCurrentIndex(5)
+        # self.tabWidget.setCurrentIndex(5)
+        self.tabWidget.insertTab(-1, self.tab_inventaires, 'Inventaire')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Gestion Produits - Mvt des stocks
     def switch_to_mvt_des_stocks_tab(self):
-        self.tabWidget.setCurrentIndex(6)
+        # self.tabWidget.setCurrentIndex(6)
+        self.tabWidget.insertTab(-1, self.tab_mvt_stock, 'Mouvements de stock')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Gestion Opérations - Ventes et Retours
     def switch_to_ventes_et_retours_tab(self):
-        self.tabWidget.setCurrentIndex(7)
+        # self.tabWidget.setCurrentIndex(7)
+        self.tabWidget.insertTab(-1, self.tab_vente_retour, 'Ventes et retours')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Gestion Opérations - Paiements et Factures
     def switch_to_paiements_et_factures_tab(self):
-        self.tabWidget.setCurrentIndex(8)
+        # self.tabWidget.setCurrentIndex(8)
+        self.tabWidget.insertTab(-1, self.tab_produits, 'Produits')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Gestion Opérations - Livraisons
     def switch_to_livraisons_tab(self):
-        self.tabWidget.setCurrentIndex(9)
+        # self.tabWidget.setCurrentIndex(9)
+        self.tabWidget.insertTab(-1, self.tab_livraison, 'Livraisons')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Gestion Comptabilité - Dépenses
     def switch_to_depenses_tab(self):
@@ -125,11 +182,17 @@ class FrontPage(QMainWindow, Ui_MainWindow):
 
         # Gestion Comptabilité - Flux monétaires
     def switch_to_flux_monetaires_tab(self):
-        self.tabWidget.setCurrentIndex(11)
+        # self.tabWidget.setCurrentIndex(11)
+        self.tabWidget.insertTab(-1, self.tab_flux_monetaire, 'Flux monétaires')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
         # Gestion Comptabiltié - Rapports financiers
     def switch_to_rapports_financiers_tab(self):
-        self.tabWidget.setCurrentIndex(12)
+        # self.tabWidget.setCurrentIndex(12)
+        self.tabWidget.insertTab(-1, self.tab_rapports_financiers, 'Rapports financiers')
+        nb = self.tabWidget.count()
+        self.tabWidget.setCurrentIndex(nb - 1)
 
 #     # Methods to show context menus
     def gestion_referentiels_context_menu(self):
@@ -233,3 +296,6 @@ QMenu:selected{
                 item = QTableWidgetItem(str(value))
                 self.table_infos_client_2.setItem(row, col, item)
 
+    def closeTab(self, index):
+            # Fonction pour fermer les onglets
+            self.tabWidget.removeTab(index)
