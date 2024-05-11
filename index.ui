@@ -1315,7 +1315,7 @@ QPushButton:checked{
                 <enum>QTabWidget::TabPosition::North</enum>
                </property>
                <property name="currentIndex">
-                <number>2</number>
+                <number>11</number>
                </property>
                <property name="iconSize">
                 <size>
@@ -1465,7 +1465,7 @@ QTablewidget{
 }</string>
                    </property>
                    <property name="placeholderText">
-                    <string>Chercher produit...</string>
+                    <string>Chercher Matère première...</string>
                    </property>
                   </widget>
                  </item>
@@ -1503,7 +1503,7 @@ QTablewidget{
 }</string>
                     </property>
                     <property name="text">
-                     <string>Ajouter Matière pre.</string>
+                     <string>Ajouter Matière</string>
                     </property>
                     <property name="icon">
                      <iconset resource="ressources.qrc">
@@ -1847,7 +1847,7 @@ QTablewidget{
 }</string>
                    </property>
                    <property name="placeholderText">
-                    <string>Chercher client...</string>
+                    <string>Chercher fournisseur...</string>
                    </property>
                   </widget>
                  </item>
@@ -1882,11 +1882,6 @@ QTablewidget{
                    <column>
                     <property name="text">
                      <string>Nom</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>prenom</string>
                     </property>
                    </column>
                    <column>
@@ -2066,7 +2061,7 @@ QTablewidget{
 }</string>
                    </property>
                    <property name="placeholderText">
-                    <string>Chercher client...</string>
+                    <string>Chercher entrepot...</string>
                    </property>
                   </widget>
                  </item>
@@ -2434,17 +2429,7 @@ QTablewidget{
                    </column>
                    <column>
                     <property name="text">
-                     <string>Prénom</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
                      <string>Nom</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Genre</string>
                     </property>
                    </column>
                    <column>
@@ -2730,7 +2715,7 @@ QTablewidget{
 }</string>
                    </property>
                    <property name="placeholderText">
-                    <string>Chercher client...</string>
+                    <string>Chercher Inventaire...</string>
                    </property>
                   </widget>
                  </item>
@@ -2763,7 +2748,7 @@ QTablewidget{
 }</string>
                    </property>
                    <property name="placeholderText">
-                    <string>Chercher client...</string>
+                    <string>Chercher vente...</string>
                    </property>
                   </widget>
                  </item>
@@ -3059,7 +3044,7 @@ QTablewidget{
 }</string>
                    </property>
                    <property name="placeholderText">
-                    <string>Chercher client...</string>
+                    <string>Chercher mouvement...</string>
                    </property>
                   </widget>
                  </item>
@@ -3174,7 +3159,7 @@ QTablewidget{
 }</string>
                    </property>
                    <property name="placeholderText">
-                    <string>Chercher client...</string>
+                    <string>Chercher livraison...</string>
                    </property>
                   </widget>
                  </item>
@@ -3465,7 +3450,7 @@ QTablewidget{
                    <widget class="QPushButton" name="btn_ajout_inventaire_3">
                     <property name="geometry">
                      <rect>
-                      <x>10</x>
+                      <x>0</x>
                       <y>0</y>
                       <width>121</width>
                       <height>32</height>
@@ -3504,7 +3489,7 @@ QTablewidget{
                    <widget class="QPushButton" name="export_pdf_btn_flux_monetaire">
                     <property name="geometry">
                      <rect>
-                      <x>270</x>
+                      <x>280</x>
                       <y>0</y>
                       <width>121</width>
                       <height>32</height>
@@ -3542,6 +3527,32 @@ QTablewidget{
                    </widget>
                   </widget>
                  </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="cherche_flux_monetaire">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>407</width>
+                     <height>31</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit{
+	padding-left: 20px;
+	border: 1px solid gray;
+	border-radius:10px
+}</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Chercher flux...</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="2" column="1">
                   <widget class="QTableWidget" name="table_infos_flux_monetaire_3">
                    <property name="styleSheet">
@@ -3577,7 +3588,7 @@ QTablewidget{
                    </column>
                   </widget>
                  </item>
-                 <item row="3" column="0" colspan="2">
+                 <item row="1" column="0" colspan="2">
                   <widget class="QTableWidget" name="table_infos_flux_monetaire">
                    <property name="styleSheet">
                     <string notr="true">QHeaderView::section{
@@ -3644,32 +3655,6 @@ QTablewidget{
                      <string>Utilisateur</string>
                     </property>
                    </column>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLineEdit" name="cherche_flux_monetaire">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>32</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>407</width>
-                     <height>31</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QLineEdit{
-	padding-left: 20px;
-	border: 1px solid gray;
-	border-radius:10px
-}</string>
-                   </property>
-                   <property name="placeholderText">
-                    <string>Chercher client...</string>
-                   </property>
                   </widget>
                  </item>
                 </layout>
