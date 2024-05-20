@@ -192,35 +192,47 @@ def get_all_clients():
         return results
     except:
         return 'Erreur'
+    
+def get_client(id_client, nom_client):
+    try:
+        conn, cur = connexion()
+        req = fr'SELECT * FROM "t_clients" WHERE id_client = {id_client} AND nom = "{nom_client}"'
+        cur.execute(req, ())
+        results = cur.fetchall()
+        deconnexion(conn)
+        return results
+    except:
+        return 'Erreur'
+
 
 
 def add_client(nom_client, entreprise_client, adresse_client, contact_client, email_client, utilisateur_id):
     
     # :TODO: Vérifier si le client existe déjà avant insertion....
     
-    conn, cur = connexion()
+    try:
+        conn, cur = connexion()
+        req = fr'INSERT INTO "t_clients" (nom, entreprise, adresse, contact, email, utilisateur_id) values (?,?,?,?,?,?)'
+        cur.execute(req, (nom_client, entreprise_client, adresse_client, contact_client, email_client, utilisateur_id))
+        deconnexion(conn)
+        return 'Client ajouté'
+    except:
+        return 'Erreur'
+
+
+def update_client(id_client, nom, entreprise, adresse, contact, email, utilisateur_id):
     # try:
-    req = fr'INSERT INTO "t_clients" (nom, entreprise, adresse, contact, email, utilisateur_id) values (?,?,?,?,?,?)'
-    cur.execute(req, (nom_client, entreprise_client, adresse_client, contact_client, email_client, utilisateur_id))
+    conn, cur = connexion()
+    req = fr'UPDATE "t_clients" set id_client = ?, nom=?, entreprise=?, adresse=?, contact=?, email=?, utilisateur_id=? where id_client = {id_client}'
+    cur.execute(req, (id_client, nom, entreprise, adresse, contact, email, utilisateur_id))
     deconnexion(conn)
-    return 'Client ajouté'
+    return 'Client mis-à-jour'
     # except:
-    #     deconnexion(conn)
     #     return 'Erreur'
 
-
-def update_client(id_client, nom, adresse, contact, utilisateur_id):
+def delete_client(id_client):  # utilisateur_id=None):
     conn, cur = connexion()
-    req = fr'UPDATE "t_clients" set client_id = ?, nom=?, adresse=?, contact=?, utilisateur_id=? where client_id = {id_client}'
-
-    cur.execute(req, (id_client, nom, adresse, contact, utilisateur_id))
-
-    deconnexion(conn)
-
-
-def delete_client(id_client, utilisateur_id):
-    conn, cur = connexion()
-    req = fr'DELETE FROM "t_clients" where client_id = {id_client}'
+    req = fr'DELETE FROM "t_clients" where id_client = {id_client}'
 
     cur.execute(req, ())
 
@@ -439,12 +451,12 @@ def delete_paiement(paiement_id, utilisateur_id):
 # Ventes
 
 
-def add_vente(vente_id, date_vente, article_id, quantite, client_id, utilisateur_id):
+def add_vente(vente_id, date_vente, article_id, quantite, id_client, utilisateur_id):
     conn, cur = connexion()
 
     try:
-        req = fr'INSERT INTO "t_ventes" (vente_id, date_vente, article_id, quantite, client_id, utilisateur_id) values (?,?,?,?,?,?)'
-        cur.execute(req, (vente_id, date_vente, article_id, quantite, client_id, utilisateur_id))
+        req = fr'INSERT INTO "t_ventes" (vente_id, date_vente, article_id, quantite, id_client, utilisateur_id) values (?,?,?,?,?,?)'
+        cur.execute(req, (vente_id, date_vente, article_id, quantite, id_client, utilisateur_id))
 
         # Update audit
         dernier_stock = requetage(
@@ -462,11 +474,11 @@ def add_vente(vente_id, date_vente, article_id, quantite, client_id, utilisateur
         return 'Error'
 
 
-def update_vente(vente_id, date_vente, article_id, quantite, client_id, utilisateur_id):
+def update_vente(vente_id, date_vente, article_id, quantite, id_client, utilisateur_id):
     conn, cur = connexion()
-    req = fr'UPDATE "t_ventes" set article_id=?, date_vente=?, quantite=?, client_id=?, utilisateur_id=? where vente_id={vente_id} and article_id={article_id}'
+    req = fr'UPDATE "t_ventes" set article_id=?, date_vente=?, quantite=?, id_client=?, utilisateur_id=? where vente_id={vente_id} and article_id={article_id}'
 
-    cur.execute(req, (date_vente, article_id, quantite, client_id, utilisateur_id))
+    cur.execute(req, (date_vente, article_id, quantite, id_client, utilisateur_id))
 
     deconnexion(conn)
 

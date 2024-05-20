@@ -17,21 +17,23 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QVBoxLayout, QWidget, QMessageBox)
+    QVBoxLayout, QWidget)
+import ressources_rc
 
-import back_logicel_gestion_stock as bk
-
-class Ui_client_dialog(QDialog):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-
-        self.resize(520, 491)
-        self.setMinimumSize(QSize(520, 440))
-        self.setMaximumSize(QSize(520, 16777215))
+class Ui_client_dialog(object):
+    def setupUi(self, client_dialog):
+        if not client_dialog.objectName():
+            client_dialog.setObjectName(u"client_dialog")
+        client_dialog.resize(520, 491)
+        client_dialog.setMinimumSize(QSize(520, 440))
+        client_dialog.setMaximumSize(QSize(520, 16777215))
         font = QFont()
         font.setFamilies([u"Courier"])
-        self.setFont(font)
-        self.setStyleSheet(u"QDialog{\n"
+        client_dialog.setFont(font)
+        icon = QIcon()
+        icon.addFile(u":/icones/logo.png", QSize(), QIcon.Normal, QIcon.Off)
+        client_dialog.setWindowIcon(icon)
+        client_dialog.setStyleSheet(u"QDialog{\n"
 "	background-color: white;\n"
 "}\n"
 "\n"
@@ -53,20 +55,20 @@ class Ui_client_dialog(QDialog):
 "	font-weight: bold;\n"
 "	selection-background-color: #2980B9;\n"
 "}")
-        self.line = QFrame(self)
+        self.line = QFrame(client_dialog)
         self.line.setObjectName(u"line")
         self.line.setGeometry(QRect(0, 60, 548, 20))
         self.line.setFrameShape(QFrame.Shape.HLine)
         self.line.setFrameShadow(QFrame.Shadow.Sunken)
-        self.label = QLabel(self)
+        self.label = QLabel(client_dialog)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(10, 20, 281, 31))
+        self.label.setGeometry(QRect(10, 20, 501, 31))
         font1 = QFont()
         font1.setFamilies([u"Courier"])
         font1.setPointSize(20)
         font1.setBold(True)
         self.label.setFont(font1)
-        self.layoutWidget = QWidget(self)
+        self.layoutWidget = QWidget(client_dialog)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(10, 81, 501, 342))
         self.verticalLayout_8 = QVBoxLayout(self.layoutWidget)
@@ -174,7 +176,7 @@ class Ui_client_dialog(QDialog):
 
         self.verticalLayout_8.addLayout(self.verticalLayout_7)
 
-        self.layoutWidget1 = QWidget(self)
+        self.layoutWidget1 = QWidget(client_dialog)
         self.layoutWidget1.setObjectName(u"layoutWidget1")
         self.layoutWidget1.setGeometry(QRect(250, 440, 261, 34))
         self.horizontalLayout = QHBoxLayout(self.layoutWidget1)
@@ -214,13 +216,13 @@ class Ui_client_dialog(QDialog):
         self.horizontalLayout.addWidget(self.ok_bouton)
 
 
-        self.retranslateUi(self)
+        self.retranslateUi(client_dialog)
 
-        QMetaObject.connectSlotsByName(self)
+        QMetaObject.connectSlotsByName(client_dialog)
     # setupUi
 
     def retranslateUi(self, client_dialog):
-        client_dialog.setWindowTitle(QCoreApplication.translate("client_dialog", u"Client Dialog", None))
+        client_dialog.setWindowTitle(QCoreApplication.translate("client_dialog", u"Dialog", None))
         self.label.setText(QCoreApplication.translate("client_dialog", u"Ajouter nouveau client", None))
         self.label_3.setText(QCoreApplication.translate("client_dialog", u"Nom", None))
         self.label_6.setText(QCoreApplication.translate("client_dialog", u"Entreprise", None))
@@ -230,48 +232,4 @@ class Ui_client_dialog(QDialog):
         self.annule_buton.setText(QCoreApplication.translate("client_dialog", u"Annuler", None))
         self.ok_bouton.setText(QCoreApplication.translate("client_dialog", u"OK", None))
     # retranslateUi
-
-        # Add new client when you press on the ok btn
-        self.ok_bouton.clicked.connect(self.add_client)
-        self.annule_buton.clicked.connect(self.close)
-
-    # INSERT NEW CLIENT
-    def insert_new_client(self):
-        utilisateur_id = 00
-        
-        # try:
-        nom_client = self.line_edit_nom.text()
-        entreprise_client = self.line_edit_entreprise.text()
-        adresse_client = self.line_edit_adresse.text()
-        contact_client = int(self.line_edit_contact.text())
-        email_client = self.line_edit_email.text()
-
-        insert = bk.add_client(nom_client, entreprise_client, adresse_client, contact_client, email_client, utilisateur_id)
-        
-        self.show_inserted_message(insert)
-
-        # except Exception as e:
-        #     print(f"Error: {e}")
-
-    def show_inserted_message(self, ret_insert):
-        msg_box = QMessageBox(self)
-
-        # :TODO: the window title doesn't show. Correct it!!
-
-        if ret_insert == "Client ajouté":
-            msg_box.setWindowTitle("Succès")
-            # msg_box.setIcon(QMessageBox.information)
-            msg_box.setText(f"Le client {self.line_edit_nom.text()} a été bien ajouté !")
-            msg_box.exec()
-        else:
-            msg_box.setWindowTitle("Echec")
-            # msg_box.setIcon(QMessageBox.warning)
-            msg_box.setText(f"Le client {self.line_edit_nom.text()} n'a pas été ajouté.")
-            msg_box.exec()
-    
-    # Signal sent to the front_page.py that says the user has clicked on the ok button and that
-    # it is now ok to insert the client in the db and display it on the front page.
-    def add_client(self):
-        self.insert_new_client()
-        self.accept()  # signal sent every time we clicked on the ok btn
 

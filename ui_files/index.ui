@@ -120,7 +120,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="ressources.qrc">:/icones/logo.png</pixmap>
+            <pixmap resource="../ressources.qrc">:/icones/logo.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -162,7 +162,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_dashboard1.png</normaloff>
              <normalon>:/icones/small_dashboard2.png</normalon>:/icones/small_dashboard1.png</iconset>
            </property>
@@ -189,7 +189,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_referentiel1.png</normaloff>
              <normalon>:/icones/small_referentiel2.png</normalon>:/icones/small_referentiel1.png</iconset>
            </property>
@@ -216,7 +216,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_stock1.png</normaloff>
              <normalon>:/icones/small_stock2.png</normalon>:/icones/small_stock1.png</iconset>
            </property>
@@ -243,7 +243,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_operation1.png</normaloff>
              <normalon>:/icones/small_operation2.png</normalon>:/icones/small_operation1.png</iconset>
            </property>
@@ -270,7 +270,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_compta1.png</normaloff>
              <normalon>:/icones/small_compta2.png</normalon>:/icones/small_compta1.png</iconset>
            </property>
@@ -326,7 +326,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_parametre1.png</normaloff>
              <normalon>:/icones/small_parametre2.png</normalon>:/icones/small_parametre1.png</iconset>
            </property>
@@ -358,7 +358,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_deconnexion1.png</normaloff>
              <normalon>:/icones/small_deconnexion2.png</normalon>:/icones/small_deconnexion1.png</iconset>
            </property>
@@ -444,7 +444,7 @@ QPushButton{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="ressources.qrc">:/icones/logo.png</pixmap>
+            <pixmap resource="../ressources.qrc">:/icones/logo.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -507,7 +507,7 @@ QPushButton:checked{
             <string>  Tableau de bord</string>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_dashboard1.png</normaloff>
              <normalon>:/icones/small_dashboard2.png</normalon>:/icones/small_dashboard1.png</iconset>
            </property>
@@ -573,7 +573,7 @@ QPushButton:checked{
                <string>  Référentiels</string>
               </property>
               <property name="icon">
-               <iconset resource="ressources.qrc">
+               <iconset resource="../ressources.qrc">
                 <normaloff>:/icones/small_referentiel1.png</normaloff>
                 <normalon>:/icones/small_referentiel2.png</normalon>:/icones/small_referentiel1.png</iconset>
               </property>
@@ -820,7 +820,7 @@ QPushButton:hover{
                <string>  Stock</string>
               </property>
               <property name="icon">
-               <iconset resource="ressources.qrc">
+               <iconset resource="../ressources.qrc">
                 <normaloff>:/icones/small_stock1.png</normaloff>
                 <normalon>:/icones/small_stock2.png</normalon>:/icones/small_stock1.png</iconset>
               </property>
@@ -971,7 +971,7 @@ QPushButton:hover{
                <string>  Opérations</string>
               </property>
               <property name="icon">
-               <iconset resource="ressources.qrc">
+               <iconset resource="../ressources.qrc">
                 <normaloff>:/icones/small_operation1.png</normaloff>
                 <normalon>:/icones/small_operation2.png</normalon>:/icones/small_operation1.png</iconset>
               </property>
@@ -1154,7 +1154,7 @@ QPushButton:hover{
                <string>  Comptabilité</string>
               </property>
               <property name="icon">
-               <iconset resource="ressources.qrc">
+               <iconset resource="../ressources.qrc">
                 <normaloff>:/icones/small_compta1.png</normaloff>
                 <normalon>:/icones/small_compta2.png</normalon>:/icones/small_compta1.png</iconset>
               </property>
@@ -1338,7 +1338,7 @@ QPushButton:checked{
             <string>  Paramètres</string>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_parametre1.png</normaloff>
              <normalon>:/icones/small_parametre2.png</normalon>:/icones/small_parametre1.png</iconset>
            </property>
@@ -1385,7 +1385,7 @@ QPushButton:checked{
             <string> Déconnexion</string>
            </property>
            <property name="icon">
-            <iconset resource="ressources.qrc">
+            <iconset resource="../ressources.qrc">
              <normaloff>:/icones/small_deconnexion1.png</normaloff>
              <normalon>:/icones/small_deconnexion2.png</normalon>:/icones/small_deconnexion1.png</iconset>
            </property>
@@ -1482,7 +1482,7 @@ QPushButton:checked{
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="ressources.qrc">
+               <iconset resource="../ressources.qrc">
                 <normaloff>:/icones/menu.png</normaloff>:/icones/menu.png</iconset>
               </property>
               <property name="iconSize">
@@ -1596,7 +1596,7 @@ QPushButton:checked{
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="ressources.qrc">:/icones/profile.png</pixmap>
+               <pixmap resource="../ressources.qrc">:/icones/profile.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -1665,7 +1665,7 @@ QPushButton:checked{
              <enum>QTabWidget::TabPosition::North</enum>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <property name="iconSize">
              <size>
@@ -1775,7 +1775,7 @@ QPushButton:checked{
                    <string> Ajout matière première</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -1818,7 +1818,7 @@ QPushButton:checked{
                    <string> Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -1861,7 +1861,7 @@ QPushButton:checked{
                    <string> Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -1945,6 +1945,12 @@ QTablewidget{
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
                 </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
@@ -1969,6 +1975,201 @@ QTablewidget{
                 <attribute name="verticalHeaderVisible">
                  <bool>false</bool>
                 </attribute>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Nouvelle ligne</string>
+                 </property>
+                </row>
                 <column>
                  <property name="text">
                   <string>ID</string>
@@ -2009,6 +2210,156 @@ QTablewidget{
                   <string>Actions</string>
                  </property>
                 </column>
+                <item row="0" column="0">
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </item>
+                <item row="10" column="0">
+                 <property name="text">
+                  <string>2</string>
+                 </property>
+                </item>
+                <item row="11" column="0">
+                 <property name="text">
+                  <string>3</string>
+                 </property>
+                </item>
+                <item row="12" column="0">
+                 <property name="text">
+                  <string>4</string>
+                 </property>
+                </item>
+                <item row="13" column="0">
+                 <property name="text">
+                  <string>5</string>
+                 </property>
+                </item>
+                <item row="14" column="0">
+                 <property name="text">
+                  <string>aaze</string>
+                 </property>
+                </item>
+                <item row="15" column="0">
+                 <property name="text">
+                  <string>azeaz</string>
+                 </property>
+                </item>
+                <item row="16" column="0">
+                 <property name="text">
+                  <string>dd</string>
+                 </property>
+                </item>
+                <item row="17" column="0">
+                 <property name="text">
+                  <string>dazdz</string>
+                 </property>
+                </item>
+                <item row="18" column="0">
+                 <property name="text">
+                  <string>qq</string>
+                 </property>
+                </item>
+                <item row="19" column="0">
+                 <property name="text">
+                  <string>xx</string>
+                 </property>
+                </item>
+                <item row="20" column="0">
+                 <property name="text">
+                  <string>cc</string>
+                 </property>
+                </item>
+                <item row="21" column="0">
+                 <property name="text">
+                  <string>vv</string>
+                 </property>
+                </item>
+                <item row="22" column="0">
+                 <property name="text">
+                  <string>bb</string>
+                 </property>
+                </item>
+                <item row="23" column="0">
+                 <property name="text">
+                  <string>nn</string>
+                 </property>
+                </item>
+                <item row="24" column="0">
+                 <property name="text">
+                  <string>gg</string>
+                 </property>
+                </item>
+                <item row="25" column="0">
+                 <property name="text">
+                  <string>ee</string>
+                 </property>
+                </item>
+                <item row="26" column="0">
+                 <property name="text">
+                  <string>tt</string>
+                 </property>
+                </item>
+                <item row="27" column="0">
+                 <property name="text">
+                  <string>gg</string>
+                 </property>
+                </item>
+                <item row="28" column="0">
+                 <property name="text">
+                  <string>ddzd</string>
+                 </property>
+                </item>
+                <item row="29" column="0">
+                 <property name="text">
+                  <string>er</string>
+                 </property>
+                </item>
+                <item row="30" column="0">
+                 <property name="text">
+                  <string>ty</string>
+                 </property>
+                </item>
+                <item row="31" column="0">
+                 <property name="text">
+                  <string>nn</string>
+                 </property>
+                </item>
+                <item row="32" column="0">
+                 <property name="text">
+                  <string>vv</string>
+                 </property>
+                </item>
+                <item row="33" column="0">
+                 <property name="text">
+                  <string>tt</string>
+                 </property>
+                </item>
+                <item row="34" column="0">
+                 <property name="text">
+                  <string>hh</string>
+                 </property>
+                </item>
+                <item row="35" column="0">
+                 <property name="text">
+                  <string>ff</string>
+                 </property>
+                </item>
+                <item row="36" column="0">
+                 <property name="text">
+                  <string>ee</string>
+                 </property>
+                </item>
+                <item row="37" column="0">
+                 <property name="text">
+                  <string>ddd</string>
+                 </property>
+                </item>
+                <item row="38" column="0">
+                 <property name="text">
+                  <string>zae</string>
+                 </property>
+                </item>
                </widget>
               </item>
              </layout>
@@ -2070,7 +2421,7 @@ QTablewidget{
                    <string> Ajout produit</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -2113,7 +2464,7 @@ QTablewidget{
                    <string> Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -2156,7 +2507,7 @@ QTablewidget{
                    <string> Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -2239,6 +2590,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
@@ -2362,7 +2719,7 @@ QTablewidget{
                    <string> Ajout fournisseur</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -2405,7 +2762,7 @@ QTablewidget{
                    <string> Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -2448,7 +2805,7 @@ QTablewidget{
                    <string> Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -2531,6 +2888,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
@@ -2651,6 +3014,12 @@ QTablewidget{
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
                 </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
@@ -2756,7 +3125,7 @@ QTablewidget{
                    <string>Ajouter entrepôt</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -2799,7 +3168,7 @@ QTablewidget{
                    <string>Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -2842,7 +3211,7 @@ QTablewidget{
                    <string>Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -2953,7 +3322,7 @@ QTablewidget{
                    <string>Ajouter client</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -2996,7 +3365,7 @@ QTablewidget{
                    <string>Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -3039,7 +3408,7 @@ QTablewidget{
                    <string>Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -3135,6 +3504,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="showGrid">
                  <bool>true</bool>
@@ -3280,7 +3655,7 @@ QTablewidget{
                    <string> Débuter</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -3323,7 +3698,7 @@ QTablewidget{
                    <string> Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -3366,7 +3741,7 @@ QTablewidget{
                    <string> Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -3449,6 +3824,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
@@ -3589,7 +3970,7 @@ QTablewidget{
                    <string> Vente / Retour</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -3632,7 +4013,7 @@ QTablewidget{
                    <string> Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -3675,7 +4056,7 @@ QTablewidget{
                    <string> Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -3758,6 +4139,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
@@ -3878,7 +4265,7 @@ QTablewidget{
                    <string> Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -3921,7 +4308,7 @@ QTablewidget{
                    <string> Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -4004,6 +4391,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
@@ -4127,7 +4520,7 @@ QTablewidget{
                    <string> Ajout livraison</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -4170,7 +4563,7 @@ QTablewidget{
                    <string> Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -4213,7 +4606,7 @@ QTablewidget{
                    <string> Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -4296,6 +4689,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
@@ -4447,7 +4846,7 @@ QTablewidget{
                    <string>Ajouter flux</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/add.png</normaloff>:/icones/add.png</iconset>
                   </property>
                  </widget>
@@ -4490,7 +4889,7 @@ QTablewidget{
                    <string>Export Excel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/excel.png</normaloff>:/icones/excel.png</iconset>
                   </property>
                  </widget>
@@ -4533,7 +4932,7 @@ QTablewidget{
                    <string>Export PDF</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="ressources.qrc">
+                   <iconset resource="../ressources.qrc">
                     <normaloff>:/icones/pdf.png</normaloff>:/icones/pdf.png</iconset>
                   </property>
                  </widget>
@@ -4622,6 +5021,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="showGrid">
                  <bool>true</bool>
@@ -4728,6 +5133,12 @@ QTablewidget{
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
                 </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
@@ -4809,6 +5220,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
@@ -4906,6 +5323,12 @@ QTablewidget{
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
                 </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
@@ -4997,6 +5420,12 @@ QTablewidget{
                 </property>
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
+                </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
                 </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
@@ -5090,6 +5519,12 @@ QTablewidget{
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
                 </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
@@ -5143,6 +5578,12 @@ QTablewidget{
                 <property name="textElideMode">
                  <enum>Qt::TextElideMode::ElideNone</enum>
                 </property>
+                <property name="verticalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
+                <property name="horizontalScrollMode">
+                 <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+                </property>
                 <property name="sortingEnabled">
                  <bool>true</bool>
                 </property>
@@ -5192,8 +5633,7 @@ QTablewidget{
  </widget>
  <layoutdefault spacing="6" margin="9"/>
  <resources>
-  <include location="ressources.qrc"/>
-  <include location="../../../.designer/backup/ressources.qrc"/>
+  <include location="../ressources.qrc"/>
  </resources>
  <connections>
   <connection>

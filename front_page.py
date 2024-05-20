@@ -1,10 +1,10 @@
-import sys
 import back_logicel_gestion_stock as bk
 
-from PySide6.QtWidgets import QMainWindow, QMenu, QWidget, QTableWidgetItem, QHBoxLayout, QPushButton
+from PySide6.QtWidgets import QMainWindow, QMenu, QWidget, QTableWidgetItem, QHBoxLayout, QPushButton, QMessageBox
 from PySide6.QtGui import QAction, QIcon
 
-from ui_index import Ui_MainWindow
+from ui_files.ui_index import Ui_MainWindow
+from dialog_client import DialogProduit
 
 
 class FrontPage(QMainWindow, Ui_MainWindow):
@@ -168,7 +168,7 @@ class FrontPage(QMainWindow, Ui_MainWindow):
     # Gestion Opérations - Ventes et Retours
     def switch_to_ventes_et_retours_tab(self):
         # self.tab_widget.setCurrentIndex(7)
-        self.tab_widget.insertTab(-1, self.tab_vente_retour, 'Ventes et retours')
+        self.tab_widget.insertTab(-1, self.tab_ventes_retours, 'Ventes et retours')
         nb = self.tab_widget.count()
         self.tab_widget.setCurrentIndex(nb - 1)
 
@@ -275,14 +275,16 @@ QMenu:selected{
     # OPEN DIALOG FOR INSETING NEW CLIENT
     def open_client_dialog(self):
 
-        from ui_client_dialog import Ui_client_dialog
+        # from ui_files.ui_client_dialog import Ui_client_dialog
         
-        client_dialog = Ui_client_dialog(self)
+        # client_dialog = Ui_client_dialog(self)
+        client_dialog = DialogProduit(self, type="Add")
         result = client_dialog.exec()  # This will block the front page gui until the dialog is closed
         print(f"dialog result: {result}")
-        print(f"Ui_client_dialog.Accepted: {Ui_client_dialog.Accepted}")
+        print(f"DialogProduit.Accepted: {DialogProduit.Accepted}")
 
-        if result == Ui_client_dialog.Accepted:
+        # if result == Ui_client_dialog.Accepted:
+        if result == DialogProduit.Accepted:
             # if the dialog was accepted (user clicked add client btn)
             print("accepted")
             self.reload_clients_table_data()
@@ -290,12 +292,12 @@ QMenu:selected{
     # OPEN DIALOG FOR INSETING NEW FOURNISSEUR
     def open_fournisseur_dialog(self):
 
-        from ui_fournisseur_dialog import Ui_fournisseur_dialog
+        from dialog_fournisseur import DialogFournisseur
         
-        fournisseur_dialog = Ui_fournisseur_dialog(self)
+        fournisseur_dialog = DialogFournisseur(self)
         result = fournisseur_dialog.exec()  # This will block the front page gui until the dialog is closed
 
-        if result == Ui_fournisseur_dialog.Accepted:
+        if result == DialogFournisseur.Accepted:
             # if the dialog was accepted (user clicked add client btn)
             self.reload_fournisseurs_table_data()
     
@@ -323,7 +325,7 @@ QMenu:selected{
                 self.table_infos_clients.setItem(row_index, col_index, item)
 
                 # Create a custom widget with 2 btns lined up horizontally for the actions column
-                double_button_widget = DoubleButtonWidgetClients(row_index, row_data)
+                double_button_widget = DoubleButtonWidgetClients(row_index, row_data, self)
 
                 # Set the custom widget with 2 btns as teh cell widget for the actions column
                 self.table_infos_clients.setCellWidget(row_index, 6, double_button_widget)
@@ -344,7 +346,7 @@ QMenu:selected{
                 self.table_infos_fournisseurs.setItem(row_index, col_index, item)
 
                 # Create a custom widget with 2 btns lined up horizontally for the actions column
-                double_button_widget = DoubleButtonWidgetClients(row_index, row_data)
+                double_button_widget = DoubleButtonWidgetClients(row_index, row_data, self)
 
                 # Set the custom widget with 2 btns as teh cell widget for the actions column
                 self.table_infos_fournisseurs.setCellWidget(row_index, 5, double_button_widget)
@@ -366,7 +368,7 @@ QMenu:selected{
                 self.table_infos_clients.setItem(row_index, col_index, item)
 
                 # Create a custom widget with 2 btns lined up horizontally for the actions column
-                double_button_widget = DoubleButtonWidgetClients(row_index, row_data)
+                double_button_widget = DoubleButtonWidgetClients(row_index, row_data, self)
 
                 # Set the custom widget with 2 btns as teh cell widget for the actions column
                 self.table_infos_clients.setCellWidget(row_index, 6, double_button_widget)
@@ -388,7 +390,7 @@ QMenu:selected{
                 self.table_infos_fournisseurs.setItem(row_index, col_index, item)
 
                 # Create a custom widget with 2 btns lined up horizontally for the actions column
-                double_button_widget = DoubleButtonWidgetClients(row_index, row_data)
+                double_button_widget = DoubleButtonWidgetClients(row_index, row_data, self)
 
                 # Set the custom widget with 2 btns as teh cell widget for the actions column
                 self.table_infos_fournisseurs.setCellWidget(row_index, 5, double_button_widget)
@@ -396,20 +398,16 @@ QMenu:selected{
 
         
 
-
-
-
-
 class DoubleButtonWidgetClients(QWidget):
-    def __init__(self, row_index, row_data):
+    def __init__(self, row_index, row_data, frontPage):
         super().__init__()
 
         self.row_index = row_index
         self.row_data = row_data
+        self.front_page = frontPage  # Store a reference to the FrontPage class
 
         # Get client variables from the tuple row_data
-        # print(row_data)
-        self.id = self.row_data[0]
+        self.id_client = self.row_data[0]
         self.nom = self.row_data[1]
 
         layout = QHBoxLayout(self)
@@ -418,11 +416,13 @@ class DoubleButtonWidgetClients(QWidget):
         self.btn_mise_a_jour = QPushButton("", self)
         self.btn_mise_a_jour.setStyleSheet("background-color: blue;")
         self.btn_mise_a_jour.setFixedSize(60, 30)
+        self.btn_mise_a_jour.clicked.connect(self.edit_clicked)
 
         # Create red Delete btn
         self.btn_suppr = QPushButton("", self)
         self.btn_suppr.setStyleSheet("background-color: red;")
         self.btn_suppr.setFixedSize(60, 30)
+        self.btn_suppr.clicked.connect(self.delete_clicked)
 
         # Set icons for the buttons
         icon_edit = QIcon(":/icones/edit.png")
@@ -434,3 +434,43 @@ class DoubleButtonWidgetClients(QWidget):
         layout.addWidget(self.btn_mise_a_jour)
         layout.addWidget(self.btn_suppr)
 
+    def edit_clicked(self):
+        # Create an instance of ClientDialog dialog
+        self.edit_dialog = DialogProduit(row_index=self.row_index, row_data=self.row_data, type="update")
+
+        # Connect the custom signal to reload_clients_table_data slot
+        self.edit_dialog.data_updated.connect(self.front_page.reload_clients_table_data)
+
+        # Execute the dialog
+        self.edit_dialog.exec()
+    
+    def delete_clicked(self):
+
+        # message = QMessageBox.question(
+        #     self, 'Confirmation',
+        #     f"Êtes-vous sûr de vouloir supprimer le client {self.nom} ?",
+        #     # QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        #     QMessageBox.Yes | QMessageBox.No
+        # )
+
+        message_box = QMessageBox(self)
+        message_box.setIcon(QMessageBox.Question)
+        message_box.setWindowTitle("Confirmation")
+        message_box.setText(f"Êtes-vous sûr de vouloir supprimer le client {self.nom} ?")
+        message_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+        btn_y = message_box.button(QMessageBox.StandardButton.Yes)
+        btn_y.setText("Oui")
+        btn_n = message_box.button(QMessageBox.StandardButton.No)
+        btn_n.setText("Non")
+        message_box.exec()
+        print(message_box.clickedButton())
+        print(btn_y)
+
+        if message_box.clickedButton() == btn_y:
+            # Delete the row from the clients table
+            bk.delete_client(self.id_client)
+
+            # Emit a signal to inform abaout data change
+            self.front_page.reload_clients_table_data()
+        elif message_box.clickedButton() == btn_n:
+            print("No btn clicked")
