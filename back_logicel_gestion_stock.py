@@ -182,26 +182,31 @@ def get_all_clients():
 
     try:
         conn, cur = connexion()
-        req = fr'SELECT id_client, prenom, nom, adresse, contact, utilisateur_id from "t_clients"'
+        req = fr'SELECT id_client, nom, entreprise, adresse, contact, email FROM "t_clients"'
         cur.execute(req, ())
         results = cur.fetchall()
-        dictionnaire = [{"id": result[0], "nom": result[1], "adresse": result[2], "contact": result[3], "utilisateur": result[4]} for result in results]
+        # dictionnaire = [(result[0], result[1], result[2], result[3], result[4], result[5]) for result in results]
+        # dictionnaire = [{"id": result[0], "nom": result[1], "entreprise": result[2], "adresse": result[3], "contact": result[4], "email": result[5]} for result in results]
         deconnexion(conn)
-        return dictionnaire
+        # return dictionnaire
+        return results
     except:
         return 'Erreur'
 
 
-def add_client(nom_client, adresse_client, contact_client, utilisateur_id):
+def add_client(nom_client, entreprise_client, adresse_client, contact_client, email_client, utilisateur_id):
+    
+    # :TODO: Vérifier si le client existe déjà avant insertion....
+    
     conn, cur = connexion()
-    try:
-        req = fr'INSERT INTO "t_clients" (nom, adresse, contact, utilisateur_id) values (?,?,?,?)'
-        cur.execute(req, (nom_client, adresse_client, contact_client, utilisateur_id))
-        deconnexion(conn)
-        return 'Client ajouté'
-    except:
-        deconnexion(conn)
-        return 'Erreur'
+    # try:
+    req = fr'INSERT INTO "t_clients" (nom, entreprise, adresse, contact, email, utilisateur_id) values (?,?,?,?,?,?)'
+    cur.execute(req, (nom_client, entreprise_client, adresse_client, contact_client, email_client, utilisateur_id))
+    deconnexion(conn)
+    return 'Client ajouté'
+    # except:
+    #     deconnexion(conn)
+    #     return 'Erreur'
 
 
 def update_client(id_client, nom, adresse, contact, utilisateur_id):
@@ -220,6 +225,18 @@ def delete_client(id_client, utilisateur_id):
     cur.execute(req, ())
 
     deconnexion(conn)
+
+def search_client(nom_client):
+    try:
+        conn, cur = connexion()
+        req = fr'SELECT id_client, nom, entreprise, adresse, contact, email FROM "t_clients" WHERE nom LIKE ?'
+        cur.execute(req, ('%'+nom_client+'%',))
+        results = cur.fetchall()
+        print(f"results: {results}")
+        deconnexion(conn)
+        return results
+    except:
+        return 'Erreur'
 
 
 # Expéditions
@@ -257,26 +274,41 @@ def delete_expedition(expedition_id, utilisateur_id):
 
 # Fournisseurs
 
-def get_all_fournisseur():
+def get_all_fournisseurs():
 
 
     try:
         conn, cur = connexion()
-        req = fr'SELECT * from "t_fournisseur"'
+        req = fr'SELECT fournisseur_id, nom, adresse, contact, email from "t_fournisseur"'
         cur.execute(req, ())
         results = cur.fetchall()
-        dictionnaire = [{"id": result[0], "nom": result[1], "adresse": result[2], "contact": result[3], "utilisateur": result[4]} for result in results]
+        # dictionnaire = [{"id": result[0], "nom": result[1], "adresse": result[2], "contact": result[3], "utilisateur": result[4]} for result in results]
         deconnexion(conn)
-        return dictionnaire
+        return results
     except:
         return 'Erreur'
 
-def add_fournisseur(id_fournisseur, nom, adresse, contact, utilisateur_id):
+def search_fournisseur(nom_fournisseur):
+    try:
+        conn, cur = connexion()
+        req = fr'SELECT fournisseur_id, nom, adresse, contact, email FROM "t_fournisseur" WHERE nom LIKE ?'
+        cur.execute(req, ('%'+nom_fournisseur+'%',))
+        results = cur.fetchall()
+        print(f"results: {results}")
+        deconnexion(conn)
+        return results
+    except:
+        return 'Erreur'
+
+def add_fournisseur(nom, adresse, contact, email, utilisateur_id):
+
+# :TODO: Traister le cas de id_fournisseur...
+
     conn, cur = connexion()
 
     try:
-        req = fr'INSERT INTO "t_fournisseur" (fournisseur_id, nom, adresse, contact, utilisateur_id) values (?,?,?,?,?)'
-        cur.execute(req, (id_fournisseur, nom, adresse, contact, utilisateur_id))
+        req = fr'INSERT INTO "t_fournisseur" (nom, adresse, contact, email, utilisateur_id) values (?,?,?,?,?)'
+        cur.execute(req, (nom, adresse, contact, email, utilisateur_id))
         deconnexion(conn)
         return 'Fournisseur enregistré'
     except:

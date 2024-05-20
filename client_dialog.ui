@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>clients_dialog</class>
- <widget class="QDialog" name="clients_dialog">
+ <class>client_dialog</class>
+ <widget class="QDialog" name="client_dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>548</width>
-    <height>625</height>
+    <width>520</width>
+    <height>491</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>520</width>
+    <height>440</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>520</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Courier</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -34,7 +51,7 @@ QComboBox{
 	height: 35px;
 	padding-left: 15px;
 	font-weight: bold;
-	selction-background-color: #290B9;
+	selection-background-color: #2980B9;
 }</string>
   </property>
   <widget class="Line" name="line">
@@ -75,8 +92,8 @@ QComboBox{
     <rect>
      <x>10</x>
      <y>81</y>
-     <width>531</width>
-     <height>477</height>
+     <width>501</width>
+     <height>342</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -97,7 +114,7 @@ QComboBox{
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="nom_lineEdit">
+       <widget class="QLineEdit" name="line_edit_nom">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -110,14 +127,19 @@ QComboBox{
           <height>35</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Courier</family>
+         </font>
+        </property>
        </widget>
       </item>
      </layout>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="label_6">
         <property name="font">
          <font>
           <family>Courier</family>
@@ -131,7 +153,7 @@ QComboBox{
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="entreprise_lineEdit">
+       <widget class="QLineEdit" name="line_edit_entreprise">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -143,6 +165,11 @@ QComboBox{
           <width>16777215</width>
           <height>35</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Courier</family>
+         </font>
         </property>
        </widget>
       </item>
@@ -165,7 +192,7 @@ QComboBox{
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="adresse_lineEdit">
+       <widget class="QLineEdit" name="line_edit_adresse">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -178,12 +205,20 @@ QComboBox{
           <height>35</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Courier</family>
+         </font>
+        </property>
        </widget>
       </item>
      </layout>
     </item>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_6">
+      <property name="spacing">
+       <number>-1</number>
+      </property>
       <item>
        <widget class="QLabel" name="label_7">
         <property name="font">
@@ -194,12 +229,12 @@ QComboBox{
          </font>
         </property>
         <property name="text">
-         <string>Téléphone</string>
+         <string>Contact</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="telephone_lineEdit">
+       <widget class="QLineEdit" name="line_edit_contact">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -211,6 +246,11 @@ QComboBox{
           <width>16777215</width>
           <height>35</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Courier</family>
+         </font>
         </property>
        </widget>
       </item>
@@ -233,7 +273,7 @@ QComboBox{
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="mail_lineEdit">
+       <widget class="QLineEdit" name="line_edit_email">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -246,6 +286,11 @@ QComboBox{
           <height>35</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Courier</family>
+         </font>
+        </property>
        </widget>
       </item>
      </layout>
@@ -255,8 +300,8 @@ QComboBox{
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>570</y>
+     <x>250</x>
+     <y>440</y>
      <width>261</width>
      <height>34</height>
     </rect>
@@ -269,6 +314,13 @@ QComboBox{
         <width>0</width>
         <height>32</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Courier</family>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
@@ -292,6 +344,13 @@ QComboBox{
         <width>0</width>
         <height>32</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Courier</family>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
